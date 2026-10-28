@@ -21,3 +21,5 @@ Preserve the recovery contract: approval binds the exact amount, action and vers
 Real adapters remain read-only, and approvals cannot enable unsupported live execution. Keep hosted/model modes explicit, retain rejected-model failures, and separate synthetic evaluations from evidence about real services. Record new results in a new output location with the command and environment, following [DATA.md](docs/DATA.md) and [EVALUATION.md](docs/EVALUATION.md).
 
 This repository currently has no project `LICENSE` file. Do not add or imply a license as part of an unrelated change; preserve existing third-party terms and data permissions.
+
+Install ShellCheck alongside actionlint when checking workflow edits, so embedded shell commands are validated as they are on the GitHub runner.

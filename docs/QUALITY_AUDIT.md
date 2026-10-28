@@ -1,6 +1,6 @@
 What this repo does: ParcelResolve joins order, payment, label and warehouse evidence, proposes recovery actions, binds them to approval, and verifies durable effects. This audit assumes a single local operator using the synthetic simulator, including overlapping browser requests and process interruption; optional real-provider reads do not enable live recovery writes.
 
-**Audit date:** 28 October 2026. **Method:** Ponytail 5.3.2 and relevant Superpowers 7.0.1 skills. Main flows were traced end to end, concrete failures were reproduced, regressions failed before each repair, and the existing verification paths were rerun. Final integration review and hosted checks for this revision are pending.
+**Audit date:** 28 October 2026. **Method:** Ponytail 5.3.2 and relevant Superpowers 7.0.1 skills. Main flows were traced end to end, concrete failures were reproduced, regressions failed before each repair, and the existing verification paths were rerun. Final integration review and hosted checks passed for the recorded revision.
 
 ## Must fix — resolved
 
@@ -49,8 +49,16 @@ npm test -- --browser-only
 
 The browser runner builds the frontend, starts an isolated temporary simulator, and removes that disposable state after stopping it. Chrome must be installed; `CHROME_BIN` can select its executable. Set `EVAL_OUTPUT` or `PARCELRESOLVE_BROWSER_OUTPUT` to retain new evidence separately from older runs.
 
-Verification jobs use pinned action commits, read-only repository permissions, time limits, cancellation of superseded runs, browser regressions and actionlint. [Dependency auditing](../.github/workflows/dependencies.yml) runs on pushes, pull requests and weekly schedules, with [Dependabot](../.github/dependabot.yml) proposals for Actions and npm. Hosted execution of these revised workflows is pending.
+Verification jobs use pinned action commits, read-only repository permissions, time limits, cancellation of superseded runs, browser regressions and actionlint. [Dependency auditing](../.github/workflows/dependencies.yml) runs on pushes, pull requests and weekly schedules, with [Dependabot](../.github/dependabot.yml) proposals for Actions and npm. The revised workflows passed for the recorded revision.
 
 Verdict: The four reproduced state-management defects are fixed within the existing simulator architecture. Approval amount/version binding, uncertain-effect reconciliation, and the distinction between printed labels and dispatch remain intact.
 
 Not checked: Authenticated merchant, payment, carrier or warehouse behavior; live writes; paid hosted models; distributed deployment; or customer handling time. The rejected CPU model's dated 51/108 classification result and 42 false resolutions remain in [EVALUATION.md](EVALUATION.md), without a new quality claim. An existing Starlette/httpx warning remains. No project license was added.
+
+## Hosted verification — 28 October 2026
+
+Reviewed implementation and workflow revision: `272385848cdbe6740af881bd75ea88ea22617554`.
+[Verification](https://github.com/ah682/parcelresolve/actions/runs/40669297574) and
+[dependency auditing](https://github.com/ah682/parcelresolve/actions/runs/40669297584) both passed.
+The run artifacts retain the generated test/browser evidence for 14 days.
+Subsequent documentation-only commits do not change this tested implementation.
