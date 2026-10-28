@@ -2,6 +2,18 @@
 
 ## Scope and plan
 
+### Publication pass — 28 October 2026
+
+- Isolated release copy; original project remains untouched. Publication plan: `docs/superpowers/plans/2026-10-28-publication.md`.
+- Fresh locked setup installed 26 Python packages and npm dependencies, built and started the documented demo; authenticated metadata returned HTTP 200. Server stopped and `make reset` restored six cases.
+- Fixed malformed non-ASCII bearer authentication producing HTTP 500. Regression observed RED with the original `compare_digest` TypeError, then GREEN with byte comparison and HTTP 401.
+- Final `npm test`: **306 passed in 13.40 s**, one upstream Starlette test-client deprecation warning; Ruff, mypy, TypeScript and production build passed. Default evaluation: **336/336 trials**, 40 scenarios, seeds 7/19/41, 36.28 s.
+- Isolated browser acceptance: **15 workflow/contrast and eight presentation checks passed**, five viewport widths without document overflow. Desktop/mobile/partial-failure captures inspected. Fresh reports retain honest synthetic/mode labels.
+- README shortened around local setup, operator workflows and limits. Fresh report, per-trial checks, schedules and source hashes retained at `evaluation/results/verified-2026-10-28`; raw current traces/databases remain generated ignored artifacts. Historical compressed safety/model failure evidence and licenses remain intact; weights/runtime caches are excluded.
+- Offline contract/review capability reports executed; authenticated reads remain `not_run`, live execution `unsupported`. No paid inference, merchant write, customer message or deployment performed.
+- Parent release controller owns independent review, root license/metadata decision, repository audit and GitHub publication. These are publication steps, not claims of production validation.
+
+
 ### Requirement-completion pass — 14 October 2026 (local gates complete)
 
 The user requested all requirements after a literal audit identified incomplete AI comparison and warehouse-hold crash coverage. The earlier passing offline suite remains historical evidence, not proof of these missing requirements.

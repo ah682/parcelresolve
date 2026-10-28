@@ -1,0 +1,58 @@
+[
+  {
+    "label": "Initial joined evidence",
+    "checked": 124,
+    "minimum_ratio": 3.84,
+    "failures": [],
+    "scope": "Visible text with computed solid backgrounds; not a complete accessibility certification."
+  },
+  {
+    "label": "Evidence timeline",
+    "checked": 141,
+    "minimum_ratio": 3.84,
+    "failures": [],
+    "scope": "Visible text with computed solid backgrounds; not a complete accessibility certification."
+  },
+  {
+    "label": "Customer draft",
+    "checked": 79,
+    "minimum_ratio": 3.84,
+    "failures": [],
+    "scope": "Visible text with computed solid backgrounds; not a complete accessibility certification."
+  },
+  {
+    "label": "Uncertain warehouse hold",
+    "checked": 92,
+    "minimum_ratio": 3.84,
+    "failures": [],
+    "scope": "Visible text with computed solid backgrounds; not a complete accessibility certification."
+  },
+  {
+    "label": "Verified hold and proposed plan 1043",
+    "checked": 107,
+    "minimum_ratio": 3.84,
+    "failures": [],
+    "scope": "Visible text with computed solid backgrounds; not a complete accessibility certification."
+  },
+  {
+    "label": "Verified hold and proposed plan 1044",
+    "checked": 109,
+    "minimum_ratio": 3.84,
+    "failures": [],
+    "scope": "Visible text with computed solid backgrounds; not a complete accessibility certification."
+  },
+  {
+    "label": "Verified hold and proposed plan 1046",
+    "checked": 107,
+    "minimum_ratio": 3.84,
+    "failures": [],
+    "scope": "Visible text with computed solid backgrounds; not a complete accessibility certification."
+  },
+  {
+    "label": "Incomplete refund recovery",
+    "checked": 144,
+    "minimum_ratio": 3.84,
+    "failures": [],
+    "scope": "Visible text with computed solid backgrounds; not a complete accessibility certification."
+  }
+]

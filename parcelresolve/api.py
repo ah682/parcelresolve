@@ -111,10 +111,10 @@ def create_app(directory: Path | None = None, *, seed: bool = True, recover: boo
     def authenticate(authorization: Annotated[str | None, Header()] = None) -> Operator:
         if not authorization or not authorization.startswith("Bearer "):
             raise DeskError("An authenticated local operator session is required", 401)
-        token = authorization.removeprefix("Bearer ")
-        if secrets.compare_digest(token, os.getenv("PARCELRESOLVE_OPERATOR_TOKEN", "demo-operator")):
+        token = authorization.removeprefix("Bearer ").encode()
+        if secrets.compare_digest(token, os.getenv("PARCELRESOLVE_OPERATOR_TOKEN", "demo-operator").encode()):
             return OPERATOR
-        if secrets.compare_digest(token, os.getenv("PARCELRESOLVE_VIEWER_TOKEN", "demo-viewer")):
+        if secrets.compare_digest(token, os.getenv("PARCELRESOLVE_VIEWER_TOKEN", "demo-viewer").encode()):
             return VIEWER
         raise DeskError("Invalid operator session", 401)
 

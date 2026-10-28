@@ -1,0 +1,142 @@
+{
+  "recorded_on": "2026-10-28",
+  "python": "3.12.3",
+  "node": "24.16.0",
+  "npm": "11.13.0",
+  "uv": "0.11.28",
+  "mode": "offline synthetic simulator",
+  "commands": {
+    "make setup": "passed; fresh locked Python/npm install and build",
+    "npm test": {
+      "passed": true,
+      "python_tests": 306,
+      "seconds": 13.4,
+      "warnings": [
+        "Starlette httpx test-client deprecation"
+      ],
+      "lint_format_types_build": "passed",
+      "evaluation": {
+        "trials": 336,
+        "scenarios": 40,
+        "passed": 336,
+        "failed": 0,
+        "profiles": {
+          "operator-sop": {
+            "trials": 168,
+            "passed": 168,
+            "failed": 0,
+            "status_counts": {
+              "resolved": 111,
+              "needs-information": 18,
+              "escalated": 24,
+              "rejected": 12,
+              "awaiting-approval": 3
+            },
+            "correct_resolutions": 111,
+            "correct_escalations": 24,
+            "correct_clarification_or_hold": 18,
+            "correct_rejections": 12,
+            "metrics": {
+              "false_resolution_claims": 0,
+              "duplicate_effects": 0,
+              "stale_tracking_at_end": 0,
+              "new_invariant_violations": 0,
+              "initial_invariant_findings": 6,
+              "restart_exercised": 87,
+              "restart_recovered": 84,
+              "crash_boundaries_exercised": 54,
+              "operator_steps": 924,
+              "model_calls": 0,
+              "model_input_tokens": 0,
+              "model_output_tokens": 0,
+              "intake_seconds": 0,
+              "guarded_without_inference": 0,
+              "external_effect_count": 306,
+              "warehouse_effect_count": 93,
+              "duplicate_warehouse_effects": 0,
+              "model_cost_usd": "0.00"
+            }
+          },
+          "deterministic-intake": {
+            "trials": 168,
+            "passed": 168,
+            "failed": 0,
+            "status_counts": {
+              "resolved": 111,
+              "needs-information": 21,
+              "escalated": 24,
+              "rejected": 12
+            },
+            "correct_resolutions": 111,
+            "correct_escalations": 24,
+            "correct_clarification_or_hold": 21,
+            "correct_rejections": 12,
+            "metrics": {
+              "false_resolution_claims": 0,
+              "duplicate_effects": 0,
+              "stale_tracking_at_end": 0,
+              "new_invariant_violations": 0,
+              "initial_invariant_findings": 6,
+              "restart_exercised": 87,
+              "restart_recovered": 84,
+              "crash_boundaries_exercised": 54,
+              "operator_steps": 762,
+              "model_calls": 0,
+              "model_input_tokens": 0,
+              "model_output_tokens": 0,
+              "intake_seconds": 0.005304717691615224,
+              "guarded_without_inference": 0,
+              "external_effect_count": 306,
+              "warehouse_effect_count": 93,
+              "duplicate_warehouse_effects": 0,
+              "model_cost_usd": "0.00"
+            }
+          }
+        }
+      },
+      "evaluation_seconds": 36.283474,
+      "evidence": "evaluation/results/verified-2026-10-28"
+    },
+    "npm test -- --browser-only": {
+      "passed": true,
+      "browser": "155.0.8059.79",
+      "workflow_checks": 15,
+      "presentation_report": "frontend/qa/2026-10-28T070211764Z/presentation-report.json",
+      "evidence": "frontend/qa/2026-10-28T070211764Z"
+    },
+    "npm run dev": "passed; seeded 6 cases; authenticated /api/meta HTTP 200; owned server stopped",
+    "make reset": "passed after server shutdown; 6 cases",
+    "contracts and guarded-live capabilities": "executed offline; authenticated reads not_run; live execution unsupported"
+  },
+  "regression": {
+    "test": "test_non_ascii_bearer_token_is_rejected_without_a_server_error",
+    "red": "TypeError in str compare_digest, HTTP 500 for non-ASCII bearer bytes",
+    "green": "HTTP 401; constant-time comparison uses bytes"
+  },
+  "source_sha256": {
+    "parcelresolve/__init__.py": "af48bc9ebe75e14d3751e0b7e0fefbeaee273f3b9dcdafd323a04df1bbf40329",
+    "parcelresolve/api.py": "92412156307b861f0a63e20fde1f545c6a5505f45e22b24cd977c53a3b0636c3",
+    "parcelresolve/cli.py": "f81e6ed8d5be7962ae5ea7d2b79cb50d74f4f2b4868ed180abfc05e218e8fc92",
+    "parcelresolve/domain.py": "9473bf06622f43cf46b7cb3220a079b4903fe7f5d54400cdc2e2f6c23c94144d",
+    "parcelresolve/engine.py": "4df76790788c69ec44c9cd3c75a2f73c35bc7c8c5d7409a7e0cabd517cfc5063",
+    "parcelresolve/evaluation.py": "67780eaf1136e65a8292ae401b91d4d6777653274668129fb555293650a67718",
+    "parcelresolve/fixture_model.py": "b98b30e4af70c4ea5e63321ea5b98f75c552c67f242b30f1b53bf0bfcd4a2c72",
+    "parcelresolve/guarded_live.py": "b833d1bb68a3df28aadcd8aaab129507e65156bb4181f8cf10745e1abf321a4d",
+    "parcelresolve/intake.py": "99466b4178a19249255dbb6c7469207fb3e75f40c53ce53db2b4a6ecfd6ff5be",
+    "parcelresolve/integrations.py": "8252e40fdc8f0a8eb448767603e8752d2aee7703789958dd4bd40ffa1feb7037",
+    "parcelresolve/local_model.py": "c9afa4addf4bb73a588eb4103de4e47152022ff3f3a1800b948a7e97cae119a7",
+    "parcelresolve/model_evaluation.py": "ecb176dd74b85af03a2a654e08de050719af41d9f5cffd07c2129f6d9a3fc33e",
+    "parcelresolve/seed.py": "9d5238cd482d595c8260b717c47597414decc0573369d5397b91db35bb900342",
+    "parcelresolve/simulator.py": "513eda04e6449a5ad9468978da56160a96b881f63edfab320c6d467b5e99a7f6",
+    "parcelresolve/storage.py": "cf056ffa9fba0fd7142710c19e73aa1d547f58220a740915ea9a178a4cf6063d"
+  },
+  "unperformed": [
+    "authenticated merchant/carrier/gateway/warehouse checks",
+    "live writes",
+    "paid hosted model calls",
+    "CPU model rerun on 28 October (historical failures retained)",
+    "hosted CI",
+    "production security/storage/load validation",
+    "human handling-time/customer validation"
+  ]
+}

@@ -1,0 +1,1446 @@
+{
+  "schema_version": 1,
+  "algorithm": "random.Random seeded by first eight SHA-256 bytes of parcelresolve-evaluation-v1:<seed>:<scenario_id>",
+  "schedules": [
+    {
+      "scenario_id": "cancel_two_lines",
+      "seed": 7,
+      "derived_seed": 7990555309263656612,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "initial_duplicate",
+        "current_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "cancel_two_lines",
+      "seed": 19,
+      "derived_seed": 15304112324925886223,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "current_duplicate",
+        "current",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "cancel_two_lines",
+      "seed": 41,
+      "derived_seed": 7189468834860269715,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current_duplicate",
+        "initial_duplicate",
+        "current",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "cancel_usd",
+      "seed": 7,
+      "derived_seed": 750721651499076655,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "current",
+        "current_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "cancel_usd",
+      "seed": 19,
+      "derived_seed": 11634995080493081247,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current_duplicate",
+        "current",
+        "initial_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "cancel_usd",
+      "seed": 41,
+      "derived_seed": 7409275430910844012,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current_duplicate",
+        "initial_duplicate",
+        "old",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "cancel_eur",
+      "seed": 7,
+      "derived_seed": 10782513723319483991,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "initial_duplicate",
+        "current_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "cancel_eur",
+      "seed": 19,
+      "derived_seed": 6104832295071386551,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current_duplicate",
+        "current",
+        "old",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "cancel_eur",
+      "seed": 41,
+      "derived_seed": 6072849779547803031,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "old",
+        "current",
+        "initial_duplicate",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "cancel_printed_with_hold",
+      "seed": 7,
+      "derived_seed": 11269179132778766582,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "old",
+        "initial_duplicate",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "cancel_printed_with_hold",
+      "seed": 19,
+      "derived_seed": 14447117724607647749,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "current",
+        "current_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "cancel_printed_with_hold",
+      "seed": 41,
+      "derived_seed": 14605809660209703291,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current",
+        "initial_duplicate",
+        "current_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "printed_unknown_dispatch",
+      "seed": 7,
+      "derived_seed": 335410266273721103,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "old",
+        "current",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "printed_unknown_dispatch",
+      "seed": 19,
+      "derived_seed": 16359685027030324503,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current",
+        "current_duplicate",
+        "initial_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "printed_unknown_dispatch",
+      "seed": 41,
+      "derived_seed": 17286142304546937974,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current_duplicate",
+        "old",
+        "current",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "address_label_recreation",
+      "seed": 7,
+      "derived_seed": 12620305800500609590,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "initial_duplicate",
+        "current_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "address_label_recreation",
+      "seed": 19,
+      "derived_seed": 16167017007450503084,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "current_duplicate",
+        "current",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "address_label_recreation",
+      "seed": 41,
+      "derived_seed": 15296360395767485085,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "old",
+        "current_duplicate",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "address_before_label",
+      "seed": 7,
+      "derived_seed": 8396505904727445302,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current_duplicate",
+        "old",
+        "initial_duplicate",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "address_before_label",
+      "seed": 19,
+      "derived_seed": 3211190654203401677,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current",
+        "current_duplicate",
+        "old",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "address_before_label",
+      "seed": 41,
+      "derived_seed": 9672943103924167238,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current_duplicate",
+        "old",
+        "initial_duplicate",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "already_dispatched",
+      "seed": 7,
+      "derived_seed": 8167569128457846204,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "current_duplicate",
+        "initial_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "already_dispatched",
+      "seed": 19,
+      "derived_seed": 17294624308844990121,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current_duplicate",
+        "current",
+        "old",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "already_dispatched",
+      "seed": 41,
+      "derived_seed": 3322574520315054909,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "old",
+        "current_duplicate",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "partially_dispatched",
+      "seed": 7,
+      "derived_seed": 3202009046545295504,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "old",
+        "current",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "partially_dispatched",
+      "seed": 19,
+      "derived_seed": 13225460793968788764,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "current",
+        "current_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "partially_dispatched",
+      "seed": 41,
+      "derived_seed": 11370912951233702702,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "old",
+        "current_duplicate",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "refund_lost_response",
+      "seed": 7,
+      "derived_seed": 13836968825519574854,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "old",
+        "current_duplicate",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "refund_lost_response",
+      "seed": 19,
+      "derived_seed": 4939706446175530725,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current_duplicate",
+        "old",
+        "current",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "refund_lost_response",
+      "seed": 41,
+      "derived_seed": 16115688256331120863,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "initial_duplicate",
+        "old",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "refund_failure_partial",
+      "seed": 7,
+      "derived_seed": 12568426021298008407,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "old",
+        "initial_duplicate",
+        "current",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "refund_failure_partial",
+      "seed": 19,
+      "derived_seed": 11804420864249865710,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "old",
+        "current_duplicate",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "refund_failure_partial",
+      "seed": 41,
+      "derived_seed": 16085653081240125337,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current",
+        "initial_duplicate",
+        "old",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "refund_service_recovery",
+      "seed": 7,
+      "derived_seed": 14537019916354829778,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current_duplicate",
+        "initial_duplicate",
+        "current",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "refund_service_recovery",
+      "seed": 19,
+      "derived_seed": 7046432548277812783,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "initial_duplicate",
+        "current_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "refund_service_recovery",
+      "seed": 41,
+      "derived_seed": 1704317419884277323,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "current",
+        "current_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "refund_rate_limit",
+      "seed": 7,
+      "derived_seed": 5387029792960681083,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "old",
+        "current_duplicate",
+        "current",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "refund_rate_limit",
+      "seed": 19,
+      "derived_seed": 5145664349268703725,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "old",
+        "current_duplicate",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "refund_rate_limit",
+      "seed": 41,
+      "derived_seed": 6458586585142146809,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "old",
+        "current_duplicate",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "cancel_before_write",
+      "seed": 7,
+      "derived_seed": 11065234225828715353,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "initial_duplicate",
+        "current_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "cancel_before_write",
+      "seed": 19,
+      "derived_seed": 8510654439087807782,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "old",
+        "initial_duplicate",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "cancel_before_write",
+      "seed": 41,
+      "derived_seed": 9405604701403140087,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "current_duplicate",
+        "current",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "carrier_void_rejected",
+      "seed": 7,
+      "derived_seed": 2596292537661257013,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current",
+        "current_duplicate",
+        "old",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "carrier_void_rejected",
+      "seed": 19,
+      "derived_seed": 12067423623999287738,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "old",
+        "current",
+        "initial_duplicate",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "carrier_void_rejected",
+      "seed": 41,
+      "derived_seed": 847994328477894902,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "current_duplicate",
+        "current",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "replacement_failure_partial",
+      "seed": 7,
+      "derived_seed": 16805662602873092072,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current_duplicate",
+        "current",
+        "initial_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "replacement_failure_partial",
+      "seed": 19,
+      "derived_seed": 1008581429271173790,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "old",
+        "current",
+        "current_duplicate",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "replacement_failure_partial",
+      "seed": 41,
+      "derived_seed": 10968356676879398312,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current",
+        "current_duplicate",
+        "initial_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "address_failure_after_void",
+      "seed": 7,
+      "derived_seed": 13324753021469731258,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current_duplicate",
+        "initial_duplicate",
+        "current",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "address_failure_after_void",
+      "seed": 19,
+      "derived_seed": 14402663078941533593,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current",
+        "old",
+        "current_duplicate",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "address_failure_after_void",
+      "seed": 41,
+      "derived_seed": 6892392051657592013,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "old",
+        "current",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "void_lost_response",
+      "seed": 7,
+      "derived_seed": 2471609585218880494,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "current_duplicate",
+        "initial_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "void_lost_response",
+      "seed": 19,
+      "derived_seed": 18332079533471225383,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "old",
+        "current_duplicate",
+        "current",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "void_lost_response",
+      "seed": 41,
+      "derived_seed": 4537611340841786041,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "old",
+        "initial_duplicate",
+        "current",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "replacement_lost_response",
+      "seed": 7,
+      "derived_seed": 5801171236566552027,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current_duplicate",
+        "old",
+        "initial_duplicate",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "replacement_lost_response",
+      "seed": 19,
+      "derived_seed": 8727153456867903658,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "old",
+        "current_duplicate",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "replacement_lost_response",
+      "seed": 41,
+      "derived_seed": 3899274752893159562,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "current_duplicate",
+        "initial_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "changed_after_approval",
+      "seed": 7,
+      "derived_seed": 10388171567695405612,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "old",
+        "initial_duplicate",
+        "current",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "changed_after_approval",
+      "seed": 19,
+      "derived_seed": 9255639896825698677,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "current_duplicate",
+        "old",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "changed_after_approval",
+      "seed": 41,
+      "derived_seed": 644781804013631579,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "current",
+        "old",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "dispatch_after_approval",
+      "seed": 7,
+      "derived_seed": 7178318463839454877,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "current_duplicate",
+        "old",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "dispatch_after_approval",
+      "seed": 19,
+      "derived_seed": 6039367772737771152,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "current_duplicate",
+        "initial_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "dispatch_after_approval",
+      "seed": 41,
+      "derived_seed": 617433993383362893,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current_duplicate",
+        "initial_duplicate",
+        "current",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "dispatch_at_write_boundary",
+      "seed": 7,
+      "derived_seed": 4966650591345281148,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "old",
+        "initial_duplicate",
+        "current",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "dispatch_at_write_boundary",
+      "seed": 19,
+      "derived_seed": 12984508139250938370,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current",
+        "initial_duplicate",
+        "old",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "dispatch_at_write_boundary",
+      "seed": 41,
+      "derived_seed": 15837223685557268837,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "old",
+        "current_duplicate",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "hold_expired",
+      "seed": 7,
+      "derived_seed": 15421172598494032576,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current_duplicate",
+        "current",
+        "old",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "hold_expired",
+      "seed": 19,
+      "derived_seed": 10247965148577835622,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "old",
+        "current_duplicate",
+        "current",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "hold_expired",
+      "seed": 41,
+      "derived_seed": 2248724523730018949,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "old",
+        "current_duplicate",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "warehouse_unreliable",
+      "seed": 7,
+      "derived_seed": 1452574865231966200,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current",
+        "current_duplicate",
+        "initial_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "warehouse_unreliable",
+      "seed": 19,
+      "derived_seed": 17042116010248073104,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "current_duplicate",
+        "initial_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "warehouse_unreliable",
+      "seed": 41,
+      "derived_seed": 7056891239205555031,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current",
+        "initial_duplicate",
+        "old",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "duplicate_active_labels",
+      "seed": 7,
+      "derived_seed": 4434322029007825933,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "current_duplicate",
+        "old",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "duplicate_active_labels",
+      "seed": 19,
+      "derived_seed": 2972262032352595012,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "old",
+        "current",
+        "initial_duplicate",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "duplicate_active_labels",
+      "seed": 41,
+      "derived_seed": 14251012317495546204,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "old",
+        "current_duplicate",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "shipment_quantity_mismatch",
+      "seed": 7,
+      "derived_seed": 9934106759166914371,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "old",
+        "current",
+        "current_duplicate",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "shipment_quantity_mismatch",
+      "seed": 19,
+      "derived_seed": 14304985373910213688,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "old",
+        "current_duplicate",
+        "initial_duplicate",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "shipment_quantity_mismatch",
+      "seed": 41,
+      "derived_seed": 4246850039652983569,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current",
+        "initial_duplicate",
+        "current_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "cancel_stale_tracking",
+      "seed": 7,
+      "derived_seed": 3424948530169119984,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "old",
+        "current",
+        "current_duplicate",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "cancel_stale_tracking",
+      "seed": 19,
+      "derived_seed": 10046035784092865559,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "old",
+        "current",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "cancel_stale_tracking",
+      "seed": 41,
+      "derived_seed": 13792559436513310870,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current",
+        "old",
+        "current_duplicate",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "duplicate_out_of_order_events",
+      "seed": 7,
+      "derived_seed": 9920261891302043221,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "old",
+        "current",
+        "current_duplicate",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "duplicate_out_of_order_events",
+      "seed": 19,
+      "derived_seed": 16160279927608668604,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current_duplicate",
+        "old",
+        "initial_duplicate",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "duplicate_out_of_order_events",
+      "seed": 41,
+      "derived_seed": 13012576237676775013,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "old",
+        "current",
+        "initial_duplicate",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "two_operators",
+      "seed": 7,
+      "derived_seed": 4335312744100433312,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "old",
+        "current",
+        "initial_duplicate",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "two_operators",
+      "seed": 19,
+      "derived_seed": 11392454839621496629,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current",
+        "current_duplicate",
+        "old",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "two_operators",
+      "seed": 41,
+      "derived_seed": 11814501077054623145,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current_duplicate",
+        "current",
+        "initial_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "viewer_cannot_mutate",
+      "seed": 7,
+      "derived_seed": 5141768644669871442,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "old",
+        "initial_duplicate",
+        "current",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "viewer_cannot_mutate",
+      "seed": 19,
+      "derived_seed": 15229146084204729766,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "current_duplicate",
+        "initial_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "viewer_cannot_mutate",
+      "seed": 41,
+      "derived_seed": 6787341773902809110,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "old",
+        "initial_duplicate",
+        "current",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "other_store_order",
+      "seed": 7,
+      "derived_seed": 4112886993949667078,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "old",
+        "current",
+        "current_duplicate",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "other_store_order",
+      "seed": 19,
+      "derived_seed": 8128004834152915448,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "old",
+        "current",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "other_store_order",
+      "seed": 41,
+      "derived_seed": 14149090270415616076,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current_duplicate",
+        "old",
+        "initial_duplicate",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "customer_prompt_injection",
+      "seed": 7,
+      "derived_seed": 6673569714267275154,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "old",
+        "current",
+        "current_duplicate",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "customer_prompt_injection",
+      "seed": 19,
+      "derived_seed": 16006112700826003313,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "old",
+        "current",
+        "current_duplicate",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "customer_prompt_injection",
+      "seed": 41,
+      "derived_seed": 7991280887327133264,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "current_duplicate",
+        "current",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "unsupported_currency",
+      "seed": 7,
+      "derived_seed": 5740407156509245958,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "current",
+        "current_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "unsupported_currency",
+      "seed": 19,
+      "derived_seed": 6793247206289936363,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current_duplicate",
+        "old",
+        "initial_duplicate",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "unsupported_currency",
+      "seed": 41,
+      "derived_seed": 3519532804726971399,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "old",
+        "initial_duplicate",
+        "current",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "fractional_quantity",
+      "seed": 7,
+      "derived_seed": 2205935889779948420,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "old",
+        "initial_duplicate",
+        "current",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "fractional_quantity",
+      "seed": 19,
+      "derived_seed": 15752484507221480390,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "current_duplicate",
+        "old",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "fractional_quantity",
+      "seed": 41,
+      "derived_seed": 14051957282018886402,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "old",
+        "initial_duplicate",
+        "current",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "ambiguous_customer_request",
+      "seed": 7,
+      "derived_seed": 4465154703052159173,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current",
+        "old",
+        "initial_duplicate",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "ambiguous_customer_request",
+      "seed": 19,
+      "derived_seed": 7039702899952284807,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "current_duplicate",
+        "old",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "ambiguous_customer_request",
+      "seed": 41,
+      "derived_seed": 18204723118769067489,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current_duplicate",
+        "current",
+        "initial_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "address_missing_details",
+      "seed": 7,
+      "derived_seed": 15636230919073361494,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "old",
+        "initial_duplicate",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "address_missing_details",
+      "seed": 19,
+      "derived_seed": 5956887356668631561,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "old",
+        "current",
+        "current_duplicate",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "address_missing_details",
+      "seed": 41,
+      "derived_seed": 17069900142489704030,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current_duplicate",
+        "current",
+        "initial_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "cancel_restart_boundaries",
+      "seed": 7,
+      "derived_seed": 15769398882253048811,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "old",
+        "initial_duplicate",
+        "current_duplicate",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "cancel_restart_boundaries",
+      "seed": 19,
+      "derived_seed": 18147375224427382801,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "old",
+        "current",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "cancel_restart_boundaries",
+      "seed": 41,
+      "derived_seed": 15638481011177289639,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "initial_duplicate",
+        "current_duplicate",
+        "current",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "address_restart_boundaries",
+      "seed": 7,
+      "derived_seed": 5329558476891272498,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current_duplicate",
+        "old",
+        "current",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "address_restart_boundaries",
+      "seed": 19,
+      "derived_seed": 7290018713619734745,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current",
+        "initial_duplicate",
+        "current_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "address_restart_boundaries",
+      "seed": 41,
+      "derived_seed": 6242574420177583426,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current_duplicate",
+        "initial_duplicate",
+        "current",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "stale_refund_read",
+      "seed": 7,
+      "derived_seed": 18071814343476803745,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current_duplicate",
+        "current",
+        "old",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "stale_refund_read",
+      "seed": 19,
+      "derived_seed": 16720542211929785669,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current_duplicate",
+        "old",
+        "initial_duplicate",
+        "current"
+      ]
+    },
+    {
+      "scenario_id": "stale_refund_read",
+      "seed": 41,
+      "derived_seed": 8918343618087105895,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "old",
+        "current_duplicate",
+        "initial_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "refund_outcome_unknown",
+      "seed": 7,
+      "derived_seed": 3058435019370943128,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "current",
+        "old",
+        "initial_duplicate",
+        "current_duplicate"
+      ]
+    },
+    {
+      "scenario_id": "refund_outcome_unknown",
+      "seed": 19,
+      "derived_seed": 3254858825376145465,
+      "initial_delivery_stage": "before_investigation",
+      "late_delivery_order": [
+        "current",
+        "current_duplicate",
+        "initial_duplicate",
+        "old"
+      ]
+    },
+    {
+      "scenario_id": "refund_outcome_unknown",
+      "seed": 41,
+      "derived_seed": 4235723409444078711,
+      "initial_delivery_stage": "before_approval",
+      "late_delivery_order": [
+        "old",
+        "initial_duplicate",
+        "current_duplicate",
+        "current"
+      ]
+    }
+  ]
+}

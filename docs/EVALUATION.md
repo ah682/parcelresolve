@@ -1,5 +1,11 @@
 # Evaluation
 
+## Publication verification — 28 October 2026
+
+The fresh [report](../evaluation/results/verified-2026-10-28/report.md) and [per-trial checks](../evaluation/results/verified-2026-10-28/results.json) passed 336/336 trials with the unchanged recovery engine and seeds 7/19/41. The publication snapshot retains report, checks, catalog/provenance and schedules, with hashes in `ARTIFACTS.json`; newly generated raw traces and databases are excluded. Run `make evaluate` to regenerate them. Historical lossless raw evidence below remains available. No CPU or hosted model experiment was rerun during publication.
+
+## Reproduce
+
 Run the credential-free release profile from the repository root:
 
 ```bash
@@ -157,7 +163,7 @@ The retained backend/grader run invoked by `npm test` completed from **03:53:01.
 | Counted operator interactions | 924 | 762 |
 | Model calls / provider USD | 0 / 0.00 | 0 / 0.00 |
 
-The [current report](../evaluation/results/verified-2026-10-14/report.md) and [results](../evaluation/results/verified-2026-10-14/results.json) retain all checks. The delivered `traces.jsonl.gz` restores **9,390 raw records**; `states.tar.gz` restores **336 separate ledger/provider pairs**. Compression was verified by hashing the decompressed trace and every archived state file against the raw originals. `ARTIFACTS.json` records hashes, sizes and restoration paths. Raw originals remain at the ignored run directory `evaluation/runs/run-20261014T035301406663117` on this machine. To restore delivered compressed evidence:
+The [current report](../evaluation/results/verified-2026-10-14/report.md) and [results](../evaluation/results/verified-2026-10-14/results.json) retain all checks. The delivered `traces.jsonl.gz` restores **9,390 raw records**; `states.tar.gz` restores **336 separate ledger/provider pairs**. Compression was verified by hashing the decompressed trace and every archived state file against the raw originals. `ARTIFACTS.json` records hashes, sizes and restoration paths. The historical original run directory is not included in the repository; the compressed artifacts restore the raw evidence. To restore delivered compressed evidence:
 
 ```bash
 cd evaluation/results/verified-2026-10-14

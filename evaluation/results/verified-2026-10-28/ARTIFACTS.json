@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "source_run": "evaluation/runs/run-20261028T070026919151887",
+  "retained": "Report, complete per-trial checks, fixture catalog/provenance and seeded schedules. Raw traces and databases remain generated local artifacts, excluded from this publication snapshot. Historical 14 October lossless raw evidence remains in the repository.",
+  "files": {
+    "catalog.json": {
+      "bytes": 45798,
+      "sha256": "f9a6d69e7db210b26b7a9dac5df250810b0caafeb0d2784873efb4048a7bd389"
+    },
+    "manifest.json": {
+      "bytes": 1710,
+      "sha256": "265d0bbbbeaf212eb3c0d833c2648f42baa59180d4d71bfcdc7643919ee47173"
+    },
+    "report.md": {
+      "bytes": 5246,
+      "sha256": "11a2cd2256c820c928bebc4006e0ad74f1b8b57e50092edf4831edc805cd4b49"
+    },
+    "results.json": {
+      "bytes": 1358055,
+      "sha256": "708501ebf0b94df86f4ec3f9df2f4d67117791b9b2a2129c8d954e81718af25d"
+    },
+    "seeds.json": {
+      "bytes": 36548,
+      "sha256": "edf56dcf61a15ebc676b5c5bf8dd314a65fda00defa779e5cbeb3742320dda32"
+    }
+  }
+}

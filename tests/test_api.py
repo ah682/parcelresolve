@@ -36,6 +36,12 @@ def test_all_case_routes_require_authentication(client):
     assert client.get("/api/meta", headers={"Authorization": "Bearer bad-token"}).status_code == 401
 
 
+def test_non_ascii_bearer_token_is_rejected_without_a_server_error(client):
+    response = client.get("/api/meta", headers={b"authorization": b"Bearer \xff"})
+    assert response.status_code == 401
+    assert not client.app.state.engine.sim.effects("1042")
+
+
 def test_viewer_gets_read_only_capabilities_and_no_writes(client):
     assert client.get("/api/meta", headers=VIEWER).json()["operator"]["role"] == "viewer"
     assert client.get("/api/orders", headers=VIEWER).status_code == 200
