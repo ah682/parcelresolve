@@ -392,6 +392,44 @@ def test_zero_value_return_cannot_receive_a_new_address_label(tmp_path):
     assert engine.sim.effects("1042") == []
 
 
+@pytest.mark.parametrize("labelled", [False, True])
+def test_zero_total_cancellation_resolves_without_refund(tmp_path, labelled):
+    engine = Engine(tmp_path)
+    order = make_order(labelled=labelled)
+    order.payment.captured.minor = 0
+    for line in order.lines:
+        line.unit_price.minor = 0
+    engine.sim.put_order(order)
+    case = engine.create_case(order.id, "Cancel my whole order", "cancel")
+    case = engine.investigate(case["id"])
+    if labelled:
+        assert case["status"] == "needs-information"
+        assert engine.sim.effects(order.id) == []
+        case = engine.hold(case["id"])
+    assert [action["kind"] for action in case["plan"]["actions"]] == (
+        ["void_label", "cancel_order"] if labelled else ["cancel_order"]
+    )
+    with pytest.raises(DeskError, match="approval"):
+        engine.execute(case["id"])
+    engine.approve(case["id"], case["plan"]["hash"], case["plan"]["resource_version"])
+    assert engine.execute(case["id"])["status"] == "resolved"
+
+    restarted = Engine(tmp_path)
+    result = restarted.view(case["id"])
+    truth = restarted.sim.read(order.id)
+    assert result["status"] == "resolved"
+    assert restarted.terminal_verified(restarted.store.get_case(case["id"]), truth)
+    assert truth.commercial_state == "cancelled"
+    assert all(
+        line.cancelled_quantity == line.quantity and line.refunded_quantity == 0 for line in truth.lines
+    )
+    assert all(label.status == "void" for label in truth.labels)
+    assert truth.payment.refunds == []
+    assert not any(effect["kind"] == "refund" for effect in restarted.sim.effects(order.id))
+    assert "no refund was required" in result["draft"]
+    assert "refund of" not in result["draft"]
+
+
 def test_local_provider_ports_match_the_documented_adapter_interfaces(tmp_path):
     from parcelresolve.integrations import CommerceAdapter, PaymentAdapter, ShippingAdapter, WarehouseAdapter
 

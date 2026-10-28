@@ -136,8 +136,98 @@ export async function checkPresentationStates(browser, baseURL, snapshots) {
     assert.equal(errors.length, 0, errors.join('\n'));
     record('Untrusted request markup is literal text and triggers no script or mutation');
     assert.equal(contrasts.flatMap(snapshot => snapshot.failures).length, 0, `Presentation contrast failures: ${JSON.stringify(contrasts)}`);
+    checks.push(...await checkAsyncStateRaces(browser, baseURL, snapshots));
     return { checks, errors, contrasts, disclosure: 'Presentation-only controlled responses. No real model inference, provider behavior or backend recovery is inferred from these checks.' };
   } finally { await context.close(); }
+}
+
+export async function checkAsyncStateRaces(browser, baseURL, snapshots) {
+  const context = await browser.newContext({ viewport: { width: 1280, height: 1000 }, reducedMotion: 'reduce' });
+  const page = await context.newPage();
+  const first = structuredClone(snapshots.caseView);
+  const second = structuredClone(first);
+  second.id = 'presentation-second-case'; second.order_id = 'presentation-second-order'; second.order.id = second.order_id;
+  const checks = [];
+  let failedMutation = false;
+  let scenario = 'mutation-error';
+  let ordersRead = 0;
+  const orderGates = [Promise.withResolvers(), Promise.withResolvers()];
+  const submitGate = Promise.withResolvers();
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  let releaseRead;
+  const delayedRead = new Promise(resolve => { releaseRead = resolve; });
+  await page.route('**/api/**', async route => {
+    const request = route.request();
+    const endpoint = new URL(request.url()).pathname.slice(4);
+    if (request.method() === 'POST') {
+      if (scenario === 'late-submission') { await submitGate.promise; return route.fulfill({ json: first }); }
+      failedMutation = true;
+      return route.fulfill({ status: 503, json: { detail: 'Controlled mutation response failure.' } });
+    }
+    if (endpoint === '/meta') return route.fulfill({ json: snapshots.meta });
+    if (endpoint === '/cases') return route.fulfill({ json: { cases: [first, second], stats: { open: 2, needs_attention: 0, awaiting_approval: 2, resolved: 0 } } });
+    if (endpoint === '/orders') {
+      if (scenario === 'reopened-orders') await orderGates[ordersRead++].promise;
+      return route.fulfill({ json: { orders: [{ id: first.order_id, customer_name: first.customer_name, commercial_state: 'processing' }] } });
+    }
+    if (endpoint === `/cases/${first.id}`) {
+      if (failedMutation) await delayedRead;
+      return route.fulfill({ json: first });
+    }
+    if (endpoint === `/cases/${second.id}`) return route.fulfill({ json: second });
+    return route.fulfill({ status: 404, json: { detail: 'Unknown asynchronous presentation fixture.' } });
+  });
+  try {
+    await page.goto(baseURL, { waitUntil: 'domcontentloaded' });
+    await page.locator('#case-detail [data-action="investigate"]').waitFor();
+    const recoveryRead = page.waitForRequest(request => request.method() === 'GET' && new URL(request.url()).pathname === `/api/cases/${first.id}`);
+    await page.locator('#case-detail [data-action="investigate"]').click();
+    await recoveryRead;
+    await page.locator(`[data-case="${second.id}"]`).click();
+    await page.locator('.detail-breadcrumb').filter({ hasText: `ORDER #${second.order_id}` }).waitFor();
+    releaseRead();
+    await page.waitForFunction(() => document.querySelector('#case-detail')?.getAttribute('aria-busy') === 'false');
+    assert.equal(await page.locator('.case-selected').getAttribute('data-case'), second.id);
+    assert.ok((await page.locator('.detail-breadcrumb').innerText()).includes(`ORDER #${second.order_id}`), 'A delayed recovery read must not replace the newly selected case');
+    checks.push({ name: 'Delayed mutation-error read-back preserves the current case selection', passed: true, evidence_type: 'controlled delayed browser response fixture' });
+    console.log('PASS presentation: Delayed mutation-error read-back preserves the current case selection');
+
+    scenario = 'reopened-orders';
+    let ordersRequest = page.waitForRequest(request => new URL(request.url()).pathname === '/api/orders');
+    await page.getByRole('button', { name: 'New request', exact: true }).click(); await ordersRequest;
+    await page.getByRole('button', { name: 'Close dialog', exact: true }).click();
+    ordersRequest = page.waitForRequest(request => new URL(request.url()).pathname === '/api/orders');
+    await page.getByRole('button', { name: 'New request', exact: true }).click(); await ordersRequest;
+    orderGates[1].resolve();
+    await page.locator('#request-text').fill('Keep the current unsaved request.');
+    const olderOrdersResponse = page.waitForResponse(response => new URL(response.url()).pathname === '/api/orders');
+    orderGates[0].resolve(); await olderOrdersResponse;
+    // The response handler and its rendering finish before the next browser frame.
+    await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    assert.equal(await page.locator('#request-text').count(), 1, 'An older order-list response must not erase the current form');
+    assert.equal(await page.locator('#request-text').inputValue(), 'Keep the current unsaved request.');
+    checks.push({ name: 'A previous order-list response preserves the reopened form and draft', passed: true, evidence_type: 'controlled delayed browser response fixture' });
+    console.log('PASS presentation: A previous order-list response preserves the reopened form and draft');
+
+    scenario = 'late-submission';
+    await page.locator('#order-select').selectOption(first.order_id);
+    await page.locator('#intent-select').selectOption('cancel');
+    const submitted = page.waitForRequest(request => request.method() === 'POST' && new URL(request.url()).pathname === '/api/cases');
+    await page.getByRole('button', { name: 'Create request', exact: true }).click(); await submitted;
+    await page.getByRole('button', { name: 'Close dialog', exact: true }).click();
+    await page.getByRole('button', { name: 'New request', exact: true }).click();
+    await page.locator('#request-text').fill('Keep the replacement dialog open.');
+    const completed = page.waitForResponse(response => response.request().method() === 'POST' && new URL(response.url()).pathname === '/api/cases');
+    submitGate.resolve(); await completed;
+    await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    assert.equal(await page.locator('#request-text').count(), 1, 'A completed old submission must not close the replacement dialog');
+    assert.equal(await page.locator('#request-text').inputValue(), 'Keep the replacement dialog open.');
+    assert.equal(errors.length, 0, errors.join('\n'));
+    checks.push({ name: 'A completed old submission preserves the replacement dialog and draft', passed: true, evidence_type: 'controlled delayed browser response fixture' });
+    console.log('PASS presentation: A completed old submission preserves the replacement dialog and draft');
+    return checks;
+  } finally { releaseRead(); orderGates.forEach(gate => gate.resolve()); submitGate.resolve(); await context.close(); }
 }
 
 export async function inspectTextContrast(page) {

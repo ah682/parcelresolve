@@ -300,18 +300,25 @@ async function selectCase(id: string): Promise<void> {
 async function refreshList(): Promise<void> { const result = await api<ListResult>('/cases'); state.cases = result.cases; state.stats = result.stats; renderMetrics(); renderQueue(); }
 async function mutate(action: string, body: unknown = {}): Promise<void> {
   const c = state.selected; if (!c || state.busy || state.role === 'viewer') return;
+  const selection = state.selectionSequence;
   const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement.dataset.action : undefined;
   state.busy = true; renderDetail(); announce(`${human(action)} in progress. Checking and recording evidence.`);
   try {
     const result = await api<CaseView>(`/cases/${encodeURIComponent(c.id)}/${action}`, 'POST', body);
-    if (state.selectedId === c.id) state.selected = result;
+    if (state.selectedId === c.id && selection === state.selectionSequence) state.selected = result;
     await refreshList();
     const messages: Record<string, string> = { investigate: 'The latest records have been investigated.', hold: result.order && warehouseState(result.order).label === 'Hold acknowledged' ? 'A simulated warehouse hold was verified.' : 'Warehouse hold outcome recorded. Review the evidence before continuing.', approve: 'Approval recorded for this exact plan.', execute: result.status === 'resolved' ? 'Recovery completed and verified.' : 'Execution finished. Review the latest case state.', retry: result.status === 'resolved' ? 'Recovery reconciled and verified.' : 'Provider evidence reconciled. Review the latest state.', fault: 'Simulation fault queued for the next matching action.' };
     toast(messages[action] ?? 'Case updated.');
   } catch (error) {
     toast(errorText(error), true);
     // A failed browser response is not proof that a mutation failed. Read back the case.
-    try { if (state.selectedId === c.id) state.selected = await api<CaseView>(`/cases/${encodeURIComponent(c.id)}`); await refreshList(); } catch { /* Keep the last evidence and explicit error. */ }
+    try {
+      if (state.selectedId === c.id) {
+        const result = await api<CaseView>(`/cases/${encodeURIComponent(c.id)}`);
+        if (state.selectedId === c.id && selection === state.selectionSequence) state.selected = result;
+      }
+      await refreshList();
+    } catch { /* Keep the last evidence and explicit error. */ }
   } finally {
     state.busy = false; renderDetail();
     if (state.selectedId === c.id && previousFocus) {
@@ -325,13 +332,14 @@ function setFilter(filter: Filter): void { const metricFocused = document.active
 function setTab(tab: Tab): void { state.tab = tab; renderDetail(); document.querySelector<HTMLButtonElement>(`#tab-${tab}`)?.focus({ preventScroll: true }); document.querySelectorAll('.sidebar-nav .nav-button').forEach(b => b.classList.toggle('active', b.getAttribute('data-action') === (tab === 'evidence' ? 'audit' : 'home'))); }
 
 let modalReturnFocus: HTMLElement | null = null;
-function modalShell(title: string, subtitle: string, content: string, wide = false): void {
+function modalShell(title: string, subtitle: string, content: string, wide = false): HTMLDialogElement {
   modalReturnFocus = document.activeElement as HTMLElement | null;
   document.querySelector('#modal-root')!.innerHTML = `<dialog class="modal ${wide ? 'modal-wide' : ''}" aria-labelledby="modal-title"><div class="modal-heading"><div><span class="section-eyebrow">PARCELRESOLVE / LOCAL DESK</span><h2 id="modal-title">${title}</h2><p>${subtitle}</p></div><button class="icon-button" data-action="close-modal" aria-label="Close dialog">${icon('close')}</button></div>${content}</dialog>`;
   const dialog = document.querySelector<HTMLDialogElement>('dialog')!;
   dialog.addEventListener('click', event => { if (event.target === dialog) { const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) closeModal(); } });
   dialog.addEventListener('cancel', event => { event.preventDefault(); closeModal(); });
   dialog.showModal();
+  return dialog;
 }
 function closeModal(): void { document.querySelector<HTMLDialogElement>('dialog')?.close(); document.querySelector('#modal-root')!.innerHTML = ''; state.modal = ''; if (modalReturnFocus?.isConnected) modalReturnFocus.focus({ preventScroll: true }); else focusCase(); }
 function formError(message: string): void {
@@ -354,10 +362,10 @@ function validateForm(form: HTMLFormElement): boolean {
 async function newCaseModal(): Promise<void> {
   if (state.role === 'viewer') { toast('Read-only access cannot create a request. Switch to the local operator role.', true); return; }
   state.modal = 'new-case';
-  modalShell('Start a recovery request', 'Choose a demo order and record what the customer needs.', `<div class="modal-body"><div class="modal-loading"><span class="spinner"></span>Loading demo orders…</div></div>`);
+  const dialog = modalShell('Start a recovery request', 'Choose a demo order and record what the customer needs.', `<div class="modal-body"><div class="modal-loading"><span class="spinner"></span>Loading demo orders…</div></div>`);
   try {
     const result = await api<{ orders: { id: string; customer_name: string; commercial_state: string }[] }>('/orders');
-    if (state.modal !== 'new-case') return;
+    if (!dialog.isConnected) return;
     if (!result.orders.length) {
       document.querySelector('.modal-body')!.innerHTML = '<div class="queue-empty"><strong>No demo orders available</strong><p>Seed the local demo or reconnect to the order service before creating a recovery request.</p></div><button class="button secondary" data-action="close-modal">Back to the desk</button>';
       return;
@@ -373,10 +381,10 @@ async function newCaseModal(): Promise<void> {
       if (intent !== 'unknown') body.intent = intent;
       if (intent === 'address') body.target_address = { name: String(data.get('name')).trim(), line1: String(data.get('line1')).trim(), city: String(data.get('city')).trim(), postcode: String(data.get('postcode')).trim(), country: String(data.get('country')).toUpperCase() };
       form.dataset.submitting = 'true'; form.setAttribute('aria-busy', 'true'); button.disabled = true; button.textContent = intent === 'unknown' ? 'Interpreting & creating…' : 'Creating…';
-      try { const c = await api<CaseView>('/cases', 'POST', body); closeModal(); state.selectedId = c.id; state.selected = c; state.tab = 'recovery'; state.filter = 'all'; state.query = ''; (document.querySelector('#search') as HTMLInputElement).value = ''; await refreshList(); renderDetail(); focusCase(); toast('Customer request added to the recovery queue.'); }
-      catch (error) { form.dataset.submitting = 'false'; form.setAttribute('aria-busy', 'false'); formError(errorText(error)); button.disabled = false; button.innerHTML = `Create request${icon('arrow')}`; }
+      try { const c = await api<CaseView>('/cases', 'POST', body); if (!dialog.isConnected) { await refreshList(); return; } closeModal(); state.selectedId = c.id; state.selected = c; state.tab = 'recovery'; state.filter = 'all'; state.query = ''; (document.querySelector('#search') as HTMLInputElement).value = ''; await refreshList(); renderDetail(); focusCase(); toast('Customer request added to the recovery queue.'); }
+      catch (error) { if (!dialog.isConnected) return; form.dataset.submitting = 'false'; form.setAttribute('aria-busy', 'false'); formError(errorText(error)); button.disabled = false; button.innerHTML = `Create request${icon('arrow')}`; }
     });
-  } catch (error) { const body = document.querySelector('.modal-body'); if (state.modal === 'new-case' && body) body.innerHTML = `<div class="form-error" role="alert">${esc(errorText(error))}</div><button class="button secondary" data-action="close-modal">Close</button>`; }
+  } catch (error) { const body = dialog.querySelector('.modal-body'); if (dialog.isConnected && body) body.innerHTML = `<div class="form-error" role="alert">${esc(errorText(error))}</div><button class="button secondary" data-action="close-modal">Close</button>`; }
 }
 const faultOptions = [
   ['lost_response', 'Write succeeds, response is lost', 'The provider applies the action, but the desk must reconcile the missing response.'],
@@ -391,15 +399,15 @@ const faultOptions = [
 function clarificationModal(): void {
   const c = state.selected; if (!c || state.role === 'viewer') return;
   state.modal = 'clarify';
-  modalShell('Clarify the request', `Record the supported customer intent for order #${esc(c.order_id)}.`, `<form id="clarify-form" novalidate><div class="modal-body"><div id="form-error" class="form-error hidden" role="alert"></div><label class="field-label" for="clarify-intent">Confirmed request</label><select class="field" id="clarify-intent" name="intent"><option value="cancel" ${c.intent !== 'address' ? 'selected' : ''}>Cancellation</option><option value="address" ${c.intent === 'address' ? 'selected' : ''}>Address correction</option></select><fieldset id="clarify-address" class="address-fields ${c.intent === 'address' ? '' : 'hidden'}" ${c.intent === 'address' ? '' : 'disabled'}><legend>Corrected delivery address</legend><label>Recipient name<input class="field" name="name" required maxlength="100" value="${esc(c.request.target_address?.name ?? c.customer_name)}"></label><label>Address line<input class="field" name="line1" required maxlength="200" value="${esc(c.request.target_address?.line1 ?? '')}"></label><div class="field-grid"><label>City<input class="field" name="city" required maxlength="100" value="${esc(c.request.target_address?.city ?? '')}"></label><label>Postcode<input class="field" name="postcode" required maxlength="20" value="${esc(c.request.target_address?.postcode ?? '')}"></label></div><label>Country code<input class="field" name="country" required minlength="2" maxlength="2" pattern="[A-Za-z]{2}" value="${esc(c.request.target_address?.country ?? 'GB')}"></label></fieldset><p class="field-hint">The desk will investigate the updated request and derive a plan from current evidence.</p></div><div class="modal-footer"><span>${icon('note')}Operator clarification</span><div><button class="button secondary" type="button" data-action="close-modal">Cancel</button><button class="button primary" type="submit">Save clarification${icon('check')}</button></div></div></form>`);
+  const dialog = modalShell('Clarify the request', `Record the supported customer intent for order #${esc(c.order_id)}.`, `<form id="clarify-form" novalidate><div class="modal-body"><div id="form-error" class="form-error hidden" role="alert"></div><label class="field-label" for="clarify-intent">Confirmed request</label><select class="field" id="clarify-intent" name="intent"><option value="cancel" ${c.intent !== 'address' ? 'selected' : ''}>Cancellation</option><option value="address" ${c.intent === 'address' ? 'selected' : ''}>Address correction</option></select><fieldset id="clarify-address" class="address-fields ${c.intent === 'address' ? '' : 'hidden'}" ${c.intent === 'address' ? '' : 'disabled'}><legend>Corrected delivery address</legend><label>Recipient name<input class="field" name="name" required maxlength="100" value="${esc(c.request.target_address?.name ?? c.customer_name)}"></label><label>Address line<input class="field" name="line1" required maxlength="200" value="${esc(c.request.target_address?.line1 ?? '')}"></label><div class="field-grid"><label>City<input class="field" name="city" required maxlength="100" value="${esc(c.request.target_address?.city ?? '')}"></label><label>Postcode<input class="field" name="postcode" required maxlength="20" value="${esc(c.request.target_address?.postcode ?? '')}"></label></div><label>Country code<input class="field" name="country" required minlength="2" maxlength="2" pattern="[A-Za-z]{2}" value="${esc(c.request.target_address?.country ?? 'GB')}"></label></fieldset><p class="field-hint">The desk will investigate the updated request and derive a plan from current evidence.</p></div><div class="modal-footer"><span>${icon('note')}Operator clarification</span><div><button class="button secondary" type="button" data-action="close-modal">Cancel</button><button class="button primary" type="submit">Save clarification${icon('check')}</button></div></div></form>`);
   document.querySelector('#clarify-intent')!.addEventListener('change', event => { const active = (event.target as HTMLSelectElement).value === 'address'; const fields = document.querySelector<HTMLFieldSetElement>('#clarify-address')!; fields.classList.toggle('hidden', !active); fields.disabled = !active; });
   document.querySelector('#clarify-form')!.addEventListener('submit', async event => {
     event.preventDefault(); const form = event.target as HTMLFormElement; if (form.dataset.submitting === 'true' || !validateForm(form)) return; const data = new FormData(form); const button = form.querySelector<HTMLButtonElement>('[type="submit"]')!;
     const intent = String(data.get('intent')); const body: { intent: string; target_address?: Address } = { intent };
     if (intent === 'address') body.target_address = { name: String(data.get('name')).trim(), line1: String(data.get('line1')).trim(), city: String(data.get('city')).trim(), postcode: String(data.get('postcode')).trim(), country: String(data.get('country')).toUpperCase() };
     form.dataset.submitting = 'true'; form.setAttribute('aria-busy', 'true'); button.disabled = true;
-    try { const result = await api<CaseView>(`/cases/${encodeURIComponent(c.id)}/clarify`, 'POST', body); if (state.selectedId === c.id) state.selected = result; closeModal(); await refreshList(); renderDetail(); focusCase(); toast('Clarification saved and current evidence investigated.'); }
-    catch (error) { form.dataset.submitting = 'false'; form.setAttribute('aria-busy', 'false'); formError(errorText(error)); button.disabled = false; }
+    try { const result = await api<CaseView>(`/cases/${encodeURIComponent(c.id)}/clarify`, 'POST', body); if (!dialog.isConnected) { await refreshList(); return; } if (state.selectedId === c.id) state.selected = result; closeModal(); await refreshList(); renderDetail(); focusCase(); toast('Clarification saved and current evidence investigated.'); }
+    catch (error) { if (!dialog.isConnected) return; form.dataset.submitting = 'false'; form.setAttribute('aria-busy', 'false'); formError(errorText(error)); button.disabled = false; }
   });
 }
 function simulationModal(): void {
@@ -407,7 +415,7 @@ function simulationModal(): void {
   state.modal = 'simulation';
   const c = state.selected;
   const options = [['warehouse_hold', 'Confirm warehouse hold'], ['refund', 'Refund payment'], ['cancel_order', 'Cancel commerce order'], ['void_label', 'Void shipping label'], ['update_address', 'Update delivery address'], ['create_label', 'Create replacement label']];
-  modalShell('Test the recovery path', `Queue a fault for order #${esc(c.order_id)} in the local simulator.`, `<form id="fault-form" novalidate><div class="modal-body"><div class="simulation-banner">${icon('flask')}<span><strong>Local simulation only</strong>No merchant, carrier or warehouse is contacted.</span></div><div id="form-error" class="form-error hidden" role="alert"></div><label class="field-label" for="fault-action">Action to interrupt</label><select class="field" id="fault-action" name="action_kind">${options.map(([value, label]) => `<option value="${value}" ${value === 'refund' ? 'selected' : ''}>${label}</option>`).join('')}</select><label class="field-label" for="fault-type">Failure scenario</label><select class="field" id="fault-type" name="fault">${faultOptions.filter(([key]) => key !== 'void_rejected').map(([value, label]) => `<option value="${value}" ${value === 'lost_response' ? 'selected' : ''}>${label}</option>`).join('')}</select><p class="fault-description" id="fault-description">${faultOptions[0][2]}</p><p class="field-hint">The fault is queued for the next matching operation on this order. Review and approve the recovery plan as usual, then execute to observe the result.</p></div><div class="modal-footer"><span>${icon('shield')}Normal approval rules apply</span><div><button class="button secondary" type="button" data-action="close-modal">Cancel</button><button class="button primary" type="submit" ${state.role === 'viewer' ? 'disabled' : ''}>Queue simulation${icon('arrow')}</button></div></div></form>`);
+  const dialog = modalShell('Test the recovery path', `Queue a fault for order #${esc(c.order_id)} in the local simulator.`, `<form id="fault-form" novalidate><div class="modal-body"><div class="simulation-banner">${icon('flask')}<span><strong>Local simulation only</strong>No merchant, carrier or warehouse is contacted.</span></div><div id="form-error" class="form-error hidden" role="alert"></div><label class="field-label" for="fault-action">Action to interrupt</label><select class="field" id="fault-action" name="action_kind">${options.map(([value, label]) => `<option value="${value}" ${value === 'refund' ? 'selected' : ''}>${label}</option>`).join('')}</select><label class="field-label" for="fault-type">Failure scenario</label><select class="field" id="fault-type" name="fault">${faultOptions.filter(([key]) => key !== 'void_rejected').map(([value, label]) => `<option value="${value}" ${value === 'lost_response' ? 'selected' : ''}>${label}</option>`).join('')}</select><p class="fault-description" id="fault-description">${faultOptions[0][2]}</p><p class="field-hint">The fault is queued for the next matching operation on this order. Review and approve the recovery plan as usual, then execute to observe the result.</p></div><div class="modal-footer"><span>${icon('shield')}Normal approval rules apply</span><div><button class="button secondary" type="button" data-action="close-modal">Cancel</button><button class="button primary" type="submit" ${state.role === 'viewer' ? 'disabled' : ''}>Queue simulation${icon('arrow')}</button></div></div></form>`);
   document.querySelector('#fault-action')!.addEventListener('change', event => {
     const action = (event.target as HTMLSelectElement).value;
     const select = document.querySelector<HTMLSelectElement>('#fault-type')!;
@@ -417,8 +425,8 @@ function simulationModal(): void {
   document.querySelector('#fault-type')!.addEventListener('change', event => { document.querySelector('#fault-description')!.textContent = faultOptions.find(([key]) => key === (event.target as HTMLSelectElement).value)?.[2] ?? ''; });
   document.querySelector('#fault-form')!.addEventListener('submit', async event => {
     event.preventDefault(); const form = event.target as HTMLFormElement; if (form.dataset.submitting === 'true' || !validateForm(form)) return; const data = new FormData(form); const button = form.querySelector<HTMLButtonElement>('[type="submit"]')!; form.dataset.submitting = 'true'; form.setAttribute('aria-busy', 'true'); button.disabled = true;
-    try { const result = await api<CaseView>(`/cases/${encodeURIComponent(c.id)}/fault`, 'POST', { action_kind: data.get('action_kind'), fault: data.get('fault') }); if (state.selectedId === c.id) state.selected = result; closeModal(); await refreshList(); renderDetail(); focusCase(); toast('Fault queued. Run the matching approved action to see the recovery behavior.'); }
-    catch (error) { form.dataset.submitting = 'false'; form.setAttribute('aria-busy', 'false'); formError(errorText(error)); button.disabled = state.role === 'viewer'; }
+    try { const result = await api<CaseView>(`/cases/${encodeURIComponent(c.id)}/fault`, 'POST', { action_kind: data.get('action_kind'), fault: data.get('fault') }); if (!dialog.isConnected) { await refreshList(); return; } if (state.selectedId === c.id) state.selected = result; closeModal(); await refreshList(); renderDetail(); focusCase(); toast('Fault queued. Run the matching approved action to see the recovery behavior.'); }
+    catch (error) { if (!dialog.isConnected) return; form.dataset.submitting = 'false'; form.setAttribute('aria-busy', 'false'); formError(errorText(error)); button.disabled = state.role === 'viewer'; }
   });
 }
 function guideModal(): void {

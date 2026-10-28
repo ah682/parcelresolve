@@ -946,7 +946,8 @@ class Engine:
                 order.commercial_state == "cancelled"
                 and sum(r.amount.minor for r in order.payment.refunds) == order.payment.captured.minor
                 and all(
-                    item.refunded_quantity == item.quantity and item.cancelled_quantity == item.quantity
+                    item.cancelled_quantity == item.quantity
+                    and (order.payment.captured.minor == 0 or item.refunded_quantity == item.quantity)
                     for item in order.lines
                 )
                 and not active
@@ -1001,13 +1002,18 @@ class Engine:
         verified_at = datetime.fromisoformat(case.updated_at).strftime("%d %b %Y at %H:%M UTC")
         if case.status == "resolved" and case.request.intent == "cancel":
             return (
-                f"On {verified_at}, we verified that order #{order.id} was cancelled and a refund of {self._money(order.payment.captured)} was recorded against the original payment. "
+                f"On {verified_at}, we verified that order #{order.id} was cancelled"
+                + (
+                    f" and a refund of {self._money(order.payment.captured)} was recorded against the original payment. "
+                    if order.payment.captured.minor
+                    else ". No payment was captured, so no refund was required. "
+                )
                 + (
                     "The warehouse hold was acknowledged and valid at that verification. "
                     if order.labels
                     else "No active shipping label remained at verification. "
                 )
-                + "Your bank's processing time may vary."
+                + ("Your bank's processing time may vary." if order.payment.captured.minor else "")
             )
         if case.status == "resolved" and case.request.intent == "address":
             return f"On {verified_at}, we verified the corrected delivery address and replacement label for order #{order.id}. The warehouse hold was valid at verification. An operator must confirm current warehouse state before releasing the parcel."

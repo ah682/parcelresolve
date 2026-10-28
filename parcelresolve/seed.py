@@ -72,14 +72,27 @@ def make_order(
 
 
 def seed_demo(engine: Engine) -> None:
-    if engine.sim.list_orders():
-        return
+    orders = {order.id: order for order in engine.sim.list_orders()}
+    case_orders = {case["order_id"] for case in engine.store.list_cases()}
     names = ["Jamie Taylor", "Morgan Ellis", "Sam Rivera", "Robin Chen", "Alex Brooks", "Casey James"]
     for index, order_id in enumerate(["1042", "1043", "1044", "1045", "1046", "1047"]):
-        order = make_order(order_id, labelled=index in {1, 2, 4, 5}, partial=index == 5)
-        order.customer_name = names[index]
-        order.address.name = names[index]
-        engine.sim.put_order(order)
+        order = orders.get(order_id)
+        if order is None:
+            order = make_order(order_id, labelled=index in {1, 2, 4, 5}, partial=index == 5)
+            order.customer_name = names[index]
+            order.address.name = names[index]
+            engine.sim.put_order(order)
+        if order_id in case_orders:
+            continue
+        if index in {3, 4}:
+            kind, fault = ("refund", "lost_response") if index == 3 else ("void_label", "void_rejected")
+            with engine.sim.connect() as conn:
+                queued = conn.execute(
+                    "SELECT 1 FROM faults WHERE order_id=? AND kind=? AND fault=?", (order_id, kind, fault)
+                ).fetchone()
+            # Queue before the case; an interrupted restart must neither lose nor rearm this fault.
+            if queued is None:
+                engine.sim.inject(order_id, kind, fault)
         if index == 2:
             target = order.address.model_copy(update={"line1": "27 Willow Lane", "postcode": "BS3 2EG"})
             case = engine.create_case(
@@ -92,13 +105,10 @@ def seed_demo(engine: Engine) -> None:
             case = engine.create_case(
                 order_id, "Please cancel my entire order before it leaves the warehouse.", intent="cancel"
             )
-        if index == 3:
-            engine.sim.inject(order_id, "refund", "lost_response")
-        if index == 4:
-            engine.sim.inject(order_id, "void_label", "void_rejected")
         if index != 3:
             engine.investigate(case["id"])
     # Keep a clean, unused order available for the new-request workflow.
-    order = make_order("1048")
-    order.customer_name = "Drew Parker"
-    engine.sim.put_order(order)
+    if "1048" not in orders:
+        order = make_order("1048")
+        order.customer_name = "Drew Parker"
+        engine.sim.put_order(order)
