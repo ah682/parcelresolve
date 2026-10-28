@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "mode": "local-model",
+  "model": {
+    "name": "Qwen2.5-0.5B-Instruct",
+    "repository": "Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+    "revision": "9217f5db79a29953eb74d5343926648285ec7e67",
+    "filename": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "quantization": "Q4_K_M",
+    "bytes": 491400032,
+    "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+    "license": "Apache-2.0",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/9217f5db79a29953eb74d5343926648285ec7e67/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "source": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/tree/9217f5db79a29953eb74d5343926648285ec7e67"
+  },
+  "runtime": {
+    "name": "llama.cpp",
+    "tag": "b11429",
+    "commit": "d81235049384534c167caea52b85a694f6103d14",
+    "version": "0.6.0-dev",
+    "platform": "Linux x86_64 CPU",
+    "archive": "llama-b11429-bin-ubuntu-x64.tar.gz",
+    "archive_sha256": "f6d25dde8f51133143d1453da4fd5f73b145127177612a283bf7995957af3392",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/download/b11429/llama-b11429-bin-ubuntu-x64.tar.gz",
+    "executable": "runtime/llama-b11429/llama-completion",
+    "executable_sha256": "7119bef261611b26f326f7c4da4dc3fdeb7bb28e2faf1ec392bda7b21215ef52",
+    "license": "MIT",
+    "source": "https://github.com/ggml-org/llama.cpp/releases/tag/b11429"
+  },
+  "default_threads": 4,
+  "default_seed": 7,
+  "temperature": 0,
+  "maximum_output_tokens": 8,
+  "context_tokens": 2048,
+  "cost_basis": "No paid provider request is made. Local electricity and hardware costs are not priced."
+}

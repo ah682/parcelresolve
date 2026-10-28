@@ -1,0 +1,87 @@
+{
+  "passed": true,
+  "created_at": "2026-10-13T17:12:09.359Z",
+  "base_url": "http://127.0.0.1:8873",
+  "synthetic": true,
+  "integration_mode": "local simulator",
+  "interpreter_mode": "deterministic",
+  "browser": "149.0.7827.155",
+  "checks": [
+    {
+      "name": "Live local API loaded six seeded cases with honest mode labels",
+      "passed": true
+    },
+    {
+      "name": "Responsive layouts at 320, 390, 768, 1024 and 1440px without document overflow",
+      "passed": true
+    },
+    {
+      "name": "Case search and recoverable empty state",
+      "passed": true
+    },
+    {
+      "name": "Printed label is distinct from physical dispatch; evidence and keyboard-accessible draft tabs",
+      "passed": true
+    },
+    {
+      "name": "Read-only role removes mutation authority and explains the role",
+      "passed": true
+    },
+    {
+      "name": "Pre-label cancellation approved, executed and verified through UI",
+      "passed": true
+    },
+    {
+      "name": "Post-label cancellation requires hold, approval, void and final verification",
+      "passed": true
+    },
+    {
+      "name": "Address correction with one replacement label completes through UI",
+      "passed": true
+    },
+    {
+      "name": "Lost refund response reconciles to one refund through UI",
+      "passed": true
+    },
+    {
+      "name": "Carrier void rejection remains visibly escalated",
+      "passed": true
+    },
+    {
+      "name": "Partially dispatched case stays under operator review",
+      "passed": true
+    },
+    {
+      "name": "New request, ambiguity clarification, fault injection, partial failure and safe retry",
+      "passed": true
+    },
+    {
+      "name": "Customer explanation remains a local draft; no console/page/network errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "mutation_routes": [
+    "/api/cases/case-1bd68433e2/approve",
+    "/api/cases/case-1bd68433e2/execute",
+    "/api/cases/case-cf0becc808/hold",
+    "/api/cases/case-cf0becc808/approve",
+    "/api/cases/case-cf0becc808/execute",
+    "/api/cases/case-488181d7bd/hold",
+    "/api/cases/case-488181d7bd/approve",
+    "/api/cases/case-488181d7bd/execute",
+    "/api/cases/case-28a62d0d66/investigate",
+    "/api/cases/case-28a62d0d66/approve",
+    "/api/cases/case-28a62d0d66/execute",
+    "/api/cases/case-28a62d0d66/retry",
+    "/api/cases/case-4c5c86b2b3/hold",
+    "/api/cases/case-4c5c86b2b3/approve",
+    "/api/cases/case-4c5c86b2b3/execute",
+    "/api/cases",
+    "/api/cases/case-b91f065991/clarify",
+    "/api/cases/case-b91f065991/fault",
+    "/api/cases/case-b91f065991/approve",
+    "/api/cases/case-b91f065991/execute",
+    "/api/cases/case-b91f065991/retry"
+  ]
+}

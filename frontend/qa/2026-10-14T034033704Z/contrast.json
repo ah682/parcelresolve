@@ -1,0 +1,494 @@
+[
+  {
+    "label": "Initial joined evidence",
+    "checked": 124,
+    "minimum_ratio": 3.84,
+    "failures": [],
+    "scope": "Visible text with computed solid backgrounds; not a complete accessibility certification."
+  },
+  {
+    "label": "Evidence timeline",
+    "checked": 141,
+    "minimum_ratio": 3.84,
+    "failures": [
+      {
+        "tag": "P",
+        "class_name": "",
+        "text": "Order, shipping, warehouse and recovery events in one audit trail.",
+        "color": "rgb(106, 132, 73)",
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "ratio": 4.19,
+        "required": 4.5
+      },
+      {
+        "tag": "SMALL",
+        "class_name": "",
+        "text": "LN-001",
+        "color": "rgb(106, 133, 68)",
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "ratio": 4.16,
+        "required": 4.5
+      },
+      {
+        "tag": "SMALL",
+        "class_name": "",
+        "text": "CR-014",
+        "color": "rgb(106, 133, 68)",
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "ratio": 4.16,
+        "required": 4.5
+      }
+    ],
+    "scope": "Visible text with computed solid backgrounds; not a complete accessibility certification."
+  },
+  {
+    "label": "Customer draft",
+    "checked": 79,
+    "minimum_ratio": 3.43,
+    "failures": [
+      {
+        "tag": "SPAN",
+        "class_name": "",
+        "text": "To Morgan Ellis",
+        "color": "rgb(102, 131, 59)",
+        "background": [
+          251,
+          253,
+          246
+        ],
+        "ratio": 4.2,
+        "required": 4.5
+      },
+      {
+        "tag": "SPAN",
+        "class_name": "draft-only",
+        "text": "Draft only",
+        "color": "rgb(100, 134, 56)",
+        "background": [
+          245,
+          249,
+          235
+        ],
+        "ratio": 3.92,
+        "required": 4.5
+      },
+      {
+        "tag": "BUTTON",
+        "class_name": "button secondary",
+        "text": "Copy draft",
+        "color": "rgb(114, 149, 78)",
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "ratio": 3.43,
+        "required": 4.5
+      }
+    ],
+    "scope": "Visible text with computed solid backgrounds; not a complete accessibility certification."
+  },
+  {
+    "label": "Uncertain warehouse hold",
+    "checked": 92,
+    "minimum_ratio": 3.84,
+    "failures": [
+      {
+        "tag": "SPAN",
+        "class_name": "",
+        "text": "Simulated provider",
+        "color": "rgb(114, 134, 81)",
+        "background": [
+          252,
+          253,
+          248
+        ],
+        "ratio": 3.92,
+        "required": 4.5
+      },
+      {
+        "tag": "P",
+        "class_name": "",
+        "text": "Warehouse hold response was lost; reconcile before any further hold re",
+        "color": "rgb(108, 130, 78)",
+        "background": [
+          252,
+          253,
+          248
+        ],
+        "ratio": 4.16,
+        "required": 4.5
+      },
+      {
+        "tag": "SPAN",
+        "class_name": "attempt-state uncertain",
+        "text": "Uncertain",
+        "color": "rgb(139, 119, 40)",
+        "background": [
+          252,
+          253,
+          248
+        ],
+        "ratio": 4.31,
+        "required": 4.5
+      }
+    ],
+    "scope": "Visible text with computed solid backgrounds; not a complete accessibility certification."
+  },
+  {
+    "label": "Verified hold and proposed plan 1043",
+    "checked": 107,
+    "minimum_ratio": 3.84,
+    "failures": [
+      {
+        "tag": "SPAN",
+        "class_name": "",
+        "text": "Simulated provider",
+        "color": "rgb(114, 134, 81)",
+        "background": [
+          252,
+          253,
+          248
+        ],
+        "ratio": 3.92,
+        "required": 4.5
+      },
+      {
+        "tag": "P",
+        "class_name": "",
+        "text": "Verified 14 Oct, 04:40 · Reference hold-e9ac89d7c8eb",
+        "color": "rgb(108, 130, 78)",
+        "background": [
+          252,
+          253,
+          248
+        ],
+        "ratio": 4.16,
+        "required": 4.5
+      },
+      {
+        "tag": "SPAN",
+        "class_name": "attempt-state succeeded",
+        "text": "Verified",
+        "color": "rgb(96, 128, 52)",
+        "background": [
+          252,
+          253,
+          248
+        ],
+        "ratio": 4.43,
+        "required": 4.5
+      },
+      {
+        "tag": "SPAN",
+        "class_name": "action-number ",
+        "text": "01",
+        "color": "rgb(109, 132, 78)",
+        "background": [
+          245,
+          248,
+          237
+        ],
+        "ratio": 3.86,
+        "required": 4.5
+      },
+      {
+        "tag": "SPAN",
+        "class_name": "action-number ",
+        "text": "02",
+        "color": "rgb(109, 132, 78)",
+        "background": [
+          245,
+          248,
+          237
+        ],
+        "ratio": 3.86,
+        "required": 4.5
+      },
+      {
+        "tag": "SPAN",
+        "class_name": "action-number ",
+        "text": "03",
+        "color": "rgb(109, 132, 78)",
+        "background": [
+          245,
+          248,
+          237
+        ],
+        "ratio": 3.86,
+        "required": 4.5
+      }
+    ],
+    "scope": "Visible text with computed solid backgrounds; not a complete accessibility certification."
+  },
+  {
+    "label": "Verified hold and proposed plan 1044",
+    "checked": 109,
+    "minimum_ratio": 3.84,
+    "failures": [
+      {
+        "tag": "SPAN",
+        "class_name": "",
+        "text": "Simulated provider",
+        "color": "rgb(114, 134, 81)",
+        "background": [
+          252,
+          253,
+          248
+        ],
+        "ratio": 3.92,
+        "required": 4.5
+      },
+      {
+        "tag": "P",
+        "class_name": "",
+        "text": "Verified 14 Oct, 04:40 · Reference hold-453dddd347cf",
+        "color": "rgb(108, 130, 78)",
+        "background": [
+          252,
+          253,
+          248
+        ],
+        "ratio": 4.16,
+        "required": 4.5
+      },
+      {
+        "tag": "SPAN",
+        "class_name": "attempt-state succeeded",
+        "text": "Verified",
+        "color": "rgb(96, 128, 52)",
+        "background": [
+          252,
+          253,
+          248
+        ],
+        "ratio": 4.43,
+        "required": 4.5
+      },
+      {
+        "tag": "SPAN",
+        "class_name": "action-number ",
+        "text": "01",
+        "color": "rgb(109, 132, 78)",
+        "background": [
+          245,
+          248,
+          237
+        ],
+        "ratio": 3.86,
+        "required": 4.5
+      },
+      {
+        "tag": "SPAN",
+        "class_name": "action-number ",
+        "text": "02",
+        "color": "rgb(109, 132, 78)",
+        "background": [
+          245,
+          248,
+          237
+        ],
+        "ratio": 3.86,
+        "required": 4.5
+      },
+      {
+        "tag": "SPAN",
+        "class_name": "action-number ",
+        "text": "03",
+        "color": "rgb(109, 132, 78)",
+        "background": [
+          245,
+          248,
+          237
+        ],
+        "ratio": 3.86,
+        "required": 4.5
+      }
+    ],
+    "scope": "Visible text with computed solid backgrounds; not a complete accessibility certification."
+  },
+  {
+    "label": "Verified hold and proposed plan 1046",
+    "checked": 107,
+    "minimum_ratio": 3.84,
+    "failures": [
+      {
+        "tag": "SPAN",
+        "class_name": "",
+        "text": "Simulated provider",
+        "color": "rgb(114, 134, 81)",
+        "background": [
+          252,
+          253,
+          248
+        ],
+        "ratio": 3.92,
+        "required": 4.5
+      },
+      {
+        "tag": "P",
+        "class_name": "",
+        "text": "Verified 14 Oct, 04:40 · Reference hold-09fb5c8dedf7",
+        "color": "rgb(108, 130, 78)",
+        "background": [
+          252,
+          253,
+          248
+        ],
+        "ratio": 4.16,
+        "required": 4.5
+      },
+      {
+        "tag": "SPAN",
+        "class_name": "attempt-state succeeded",
+        "text": "Verified",
+        "color": "rgb(96, 128, 52)",
+        "background": [
+          252,
+          253,
+          248
+        ],
+        "ratio": 4.43,
+        "required": 4.5
+      },
+      {
+        "tag": "SPAN",
+        "class_name": "action-number ",
+        "text": "01",
+        "color": "rgb(109, 132, 78)",
+        "background": [
+          245,
+          248,
+          237
+        ],
+        "ratio": 3.86,
+        "required": 4.5
+      },
+      {
+        "tag": "SPAN",
+        "class_name": "action-number ",
+        "text": "02",
+        "color": "rgb(109, 132, 78)",
+        "background": [
+          245,
+          248,
+          237
+        ],
+        "ratio": 3.86,
+        "required": 4.5
+      },
+      {
+        "tag": "SPAN",
+        "class_name": "action-number ",
+        "text": "03",
+        "color": "rgb(109, 132, 78)",
+        "background": [
+          245,
+          248,
+          237
+        ],
+        "ratio": 3.86,
+        "required": 4.5
+      }
+    ],
+    "scope": "Visible text with computed solid backgrounds; not a complete accessibility certification."
+  },
+  {
+    "label": "Incomplete refund recovery",
+    "checked": 144,
+    "minimum_ratio": 3.84,
+    "failures": [
+      {
+        "tag": "SPAN",
+        "class_name": "",
+        "text": "1 of 2 confirmed",
+        "color": "rgb(114, 134, 81)",
+        "background": [
+          252,
+          253,
+          248
+        ],
+        "ratio": 3.92,
+        "required": 4.5
+      },
+      {
+        "tag": "P",
+        "class_name": "",
+        "text": "Provider reference sim-5cf11786f69b4c",
+        "color": "rgb(108, 130, 78)",
+        "background": [
+          252,
+          253,
+          248
+        ],
+        "ratio": 4.16,
+        "required": 4.5
+      },
+      {
+        "tag": "SPAN",
+        "class_name": "attempt-state succeeded",
+        "text": "Confirmed",
+        "color": "rgb(96, 128, 52)",
+        "background": [
+          252,
+          253,
+          248
+        ],
+        "ratio": 4.43,
+        "required": 4.5
+      },
+      {
+        "tag": "P",
+        "class_name": "",
+        "text": "Provider rejected the request before writing. Safe reconciliation is a",
+        "color": "rgb(108, 130, 78)",
+        "background": [
+          252,
+          253,
+          248
+        ],
+        "ratio": 4.16,
+        "required": 4.5
+      },
+      {
+        "tag": "SPAN",
+        "class_name": "action-number ",
+        "text": "02",
+        "color": "rgb(109, 132, 78)",
+        "background": [
+          245,
+          248,
+          237
+        ],
+        "ratio": 3.86,
+        "required": 4.5
+      },
+      {
+        "tag": "DIV",
+        "class_name": "approved-note",
+        "text": "This exact plan has an operator approval.",
+        "color": "rgb(98, 131, 55)",
+        "background": [
+          239,
+          246,
+          228
+        ],
+        "ratio": 3.94,
+        "required": 4.5
+      }
+    ],
+    "scope": "Visible text with computed solid backgrounds; not a complete accessibility certification."
+  }
+]

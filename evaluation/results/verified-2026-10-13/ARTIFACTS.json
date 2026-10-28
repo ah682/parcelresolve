@@ -1,0 +1,39 @@
+{
+  "created_at": "2026-10-13T17:08:00.231233+00:00",
+  "raw_run_preserved_at": "/tmp/parcelresolve-evaluation-verified-2026-10-13-frozen-raw",
+  "compression": "Lossless gzip JSONL plus gzip tar archive of the separate provider/ledger databases. Extract inside this directory to restore raw trace/state paths.",
+  "artifacts": {
+    "report.md": {
+      "bytes": 5005,
+      "sha256": "30ca64e4e5e0ed780f25ef1108cc0cf2f1e93d35d3d736fe8325e829793c04bd"
+    },
+    "results.json": {
+      "bytes": 1171065,
+      "sha256": "d97a6ce4682d6334e3031e1d9f043b63bb01661e4df7af1314bffa91061e4e52"
+    },
+    "states.tar.gz": {
+      "bytes": 2806080,
+      "sha256": "14ffd47e8a6ed4fd1bb7e5eb6bbae5413f31b08ebfcfdaa1ea5891dfae81f57a",
+      "sqlite_pairs": 336
+    },
+    "catalog.json": {
+      "bytes": 45798,
+      "sha256": "f9a6d69e7db210b26b7a9dac5df250810b0caafeb0d2784873efb4048a7bd389"
+    },
+    "seeds.json": {
+      "bytes": 36548,
+      "sha256": "edf56dcf61a15ebc676b5c5bf8dd314a65fda00defa779e5cbeb3742320dda32"
+    },
+    "manifest.json": {
+      "bytes": 1710,
+      "sha256": "265d0bbbbeaf212eb3c0d833c2648f42baa59180d4d71bfcdc7643919ee47173"
+    },
+    "traces.jsonl.gz": {
+      "bytes": 1635210,
+      "sha256": "d6cde8dc0ee0eed63a8de2cfa98278cd9ecb9faf9f5975c3865b4d4e2120786d",
+      "uncompressed_sha256": "08a36d874f89d13ba2583bb0570700d5f9ff5ecc856a7d0081b57ef8ef1de0ca",
+      "uncompressed_bytes": 31816623,
+      "records": 8838
+    }
+  }
+}

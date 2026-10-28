@@ -1,0 +1,143 @@
+{
+  "passed": true,
+  "created_at": "2026-10-14T03:42:03.682Z",
+  "base_url": "http://127.0.0.1:39819",
+  "synthetic": true,
+  "integration_mode": "local simulator",
+  "interpreter_mode": "deterministic",
+  "browser": "149.0.7827.155",
+  "checks": [
+    {
+      "name": "Live local API loaded six seeded cases with honest mode labels",
+      "passed": true
+    },
+    {
+      "name": "Responsive layouts at 320, 390, 768, 1024 and 1440px without document overflow",
+      "passed": true
+    },
+    {
+      "name": "Case search and recoverable empty state",
+      "passed": true
+    },
+    {
+      "name": "Printed label is distinct from physical dispatch; evidence and keyboard-accessible draft tabs",
+      "passed": true
+    },
+    {
+      "name": "Read-only role removes mutation authority and explains the role",
+      "passed": true
+    },
+    {
+      "name": "Pre-label cancellation approved, executed and verified through UI",
+      "passed": true
+    },
+    {
+      "name": "Lost warehouse response stays unconfirmed until the same operation is reconciled",
+      "passed": true
+    },
+    {
+      "name": "Post-label cancellation requires hold, approval, void and final verification",
+      "passed": true
+    },
+    {
+      "name": "Address correction with one replacement label completes through UI",
+      "passed": true
+    },
+    {
+      "name": "Lost refund response reconciles to one refund through UI",
+      "passed": true
+    },
+    {
+      "name": "Carrier void rejection remains visibly escalated",
+      "passed": true
+    },
+    {
+      "name": "Partially dispatched case stays under operator review",
+      "passed": true
+    },
+    {
+      "name": "New request, ambiguity clarification, fault injection, partial failure and safe retry",
+      "passed": true
+    },
+    {
+      "name": "Customer explanation remains a local draft; no console/page/network errors",
+      "passed": true
+    },
+    {
+      "name": "Visible text meets measured contrast thresholds in recovery, evidence, draft and failure views",
+      "passed": true,
+      "checked": 903,
+      "minimum_ratio": 3.84,
+      "scope": "Computed solid-background text; not a complete accessibility certification."
+    }
+  ],
+  "presentation_checks": [
+    {
+      "name": "Loading states announce progress and finish before enabling the evidence view",
+      "passed": true,
+      "evidence_type": "controlled browser response fixture"
+    },
+    {
+      "name": "Roving tabs, Home/End, arrow navigation and search shortcut retain keyboard focus",
+      "passed": true,
+      "evidence_type": "controlled browser response fixture"
+    },
+    {
+      "name": "Invalid and whitespace-only forms make no API write; server errors preserve input and Escape restores focus",
+      "passed": true,
+      "evidence_type": "controlled browser response fixture"
+    },
+    {
+      "name": "Service failure explains unavailable evidence and disables stale actions; reconnect recovers",
+      "passed": true,
+      "evidence_type": "controlled browser response fixture"
+    },
+    {
+      "name": "Offline startup and genuinely empty queue have recoverable, honest states",
+      "passed": true,
+      "evidence_type": "controlled browser response fixture"
+    },
+    {
+      "name": "Empty order catalog offers an explanation instead of an unusable form",
+      "passed": true,
+      "evidence_type": "controlled browser response fixture"
+    },
+    {
+      "name": "Configured intake mode and actual result provenance remain distinct, including mobile and recorded fixtures",
+      "passed": true,
+      "evidence_type": "controlled browser response fixture"
+    },
+    {
+      "name": "Untrusted request markup is literal text and triggers no script or mutation",
+      "passed": true,
+      "evidence_type": "controlled browser response fixture"
+    }
+  ],
+  "presentation_disclosure": "Presentation-only controlled responses. No real model inference, provider behavior or backend recovery is inferred from these checks.",
+  "errors": [],
+  "mutation_routes": [
+    "/api/cases/case-2c63f47b82/approve",
+    "/api/cases/case-2c63f47b82/execute",
+    "/api/cases/case-5f0bd72fa2/fault",
+    "/api/cases/case-5f0bd72fa2/hold",
+    "/api/cases/case-5f0bd72fa2/retry",
+    "/api/cases/case-5f0bd72fa2/approve",
+    "/api/cases/case-5f0bd72fa2/execute",
+    "/api/cases/case-b565ec2d49/hold",
+    "/api/cases/case-b565ec2d49/approve",
+    "/api/cases/case-b565ec2d49/execute",
+    "/api/cases/case-3527686ff3/investigate",
+    "/api/cases/case-3527686ff3/approve",
+    "/api/cases/case-3527686ff3/execute",
+    "/api/cases/case-3527686ff3/retry",
+    "/api/cases/case-29e89f5b02/hold",
+    "/api/cases/case-29e89f5b02/approve",
+    "/api/cases/case-29e89f5b02/execute",
+    "/api/cases",
+    "/api/cases/case-3c0853a95d/clarify",
+    "/api/cases/case-3c0853a95d/fault",
+    "/api/cases/case-3c0853a95d/approve",
+    "/api/cases/case-3c0853a95d/execute",
+    "/api/cases/case-3c0853a95d/retry"
+  ]
+}

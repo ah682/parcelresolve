@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "mode": "recorded-fixture",
+  "provenance": "Original synthetic development-only contract responses; not produced by an AI and excluded from evaluation",
+  "license": "CC0-1.0",
+  "records": [
+    {
+      "text": "Fixture-only cancellation request A.",
+      "interpretation": {
+        "intent": "cancel",
+        "needs_clarification": false,
+        "explanation": "Recorded development fixture. No inference or action occurred.",
+        "mode": "recorded-fixture"
+      }
+    },
+    {
+      "text": "Fixture-only unclear request B.",
+      "interpretation": {
+        "intent": "unknown",
+        "needs_clarification": true,
+        "explanation": "Recorded development clarification fixture. No inference or action occurred.",
+        "mode": "recorded-fixture"
+      }
+    }
+  ]
+}

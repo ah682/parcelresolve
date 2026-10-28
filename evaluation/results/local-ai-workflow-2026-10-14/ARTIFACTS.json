@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "mode": "Actual experimental local CPU model workflow; 45 failures retained; not a passing release profile",
+  "raw_backup": "evaluation/runs/local-ai-workflow-2026-10-14-raw",
+  "lossless_compression": {
+    "traces.jsonl.gz": {
+      "restores": "traces.jsonl",
+      "raw_sha256": "39eb18357715ca4272a73e4a305200d59cfecd52f9ff5f6edf361e6bc6e565f1",
+      "raw_lines": 4620
+    },
+    "states.tar.gz": {
+      "restores": "states/",
+      "state_file_count": 492,
+      "ledger_provider_pairs": 168
+    }
+  },
+  "files": {
+    "catalog.json": {
+      "bytes": 45798,
+      "sha256": "f9a6d69e7db210b26b7a9dac5df250810b0caafeb0d2784873efb4048a7bd389"
+    },
+    "manifest.json": {
+      "bytes": 1710,
+      "sha256": "265d0bbbbeaf212eb3c0d833c2648f42baa59180d4d71bfcdc7643919ee47173"
+    },
+    "report.md": {
+      "bytes": 16306,
+      "sha256": "24aeb2ab16441743b057738a2d43388e19c62c0bd99cc647af55736e31358832"
+    },
+    "results.json": {
+      "bytes": 679763,
+      "sha256": "89d5e4ac7e2821723492e702513adf0333deb53c980e6919067a9dce432d8624"
+    },
+    "seeds.json": {
+      "bytes": 36548,
+      "sha256": "edf56dcf61a15ebc676b5c5bf8dd314a65fda00defa779e5cbeb3742320dda32"
+    },
+    "states.tar.gz": {
+      "bytes": 1654991,
+      "sha256": "945e818314c40558864fc26f512c594e261af83bf10c6d2632df09212d9af7cd"
+    },
+    "traces.jsonl.gz": {
+      "bytes": 1132747,
+      "sha256": "7313d19e4483d6156c87c9ac19bfa2f6f4d3b2f1f8c2d6b0636445bd9507801d"
+    }
+  }
+}

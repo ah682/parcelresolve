@@ -1,0 +1,418 @@
+{
+  "release": "0.1.0",
+  "recorded_on": "2026-10-14",
+  "recorded_at": "2026-10-14T04:07:25.500528+00:00",
+  "mode": "Default offline local simulator; actual CPU model comparison retained separately and rejected for desk use",
+  "python": "3.12.3",
+  "checks": {
+    "combined_command": "npm test",
+    "pytest": {
+      "passed": 305,
+      "seconds": 21.3,
+      "warnings": 1,
+      "warning": "Starlette httpx test-client deprecation"
+    },
+    "ruff_check": "passed",
+    "ruff_format": {
+      "status": "passed",
+      "files": 24
+    },
+    "mypy": {
+      "status": "passed",
+      "source_files": 15
+    },
+    "typescript": "passed",
+    "frontend_build": "passed",
+    "startup": {
+      "command": "npm run dev",
+      "status": "passed",
+      "locked_python_packages": 26,
+      "authenticated_api_meta_status": 200,
+      "url": "http://127.0.0.1:8873",
+      "demo_data": "Existing seeded data preserved; additive migrations",
+      "shutdown": "Task-owned server stopped cleanly"
+    },
+    "browser": {
+      "command": "npm test -- --browser-only",
+      "status": "passed",
+      "isolated_fresh_demo": true,
+      "evidence_directory": "frontend/qa/2026-10-14T035836492Z",
+      "checks_passed": 15,
+      "presentation_checks_passed": 8,
+      "presentation_disclosure": "Presentation-only controlled responses. No real model inference, provider behavior or backend recovery is inferred from these checks.",
+      "errors": [],
+      "checked_at": "2026-10-14T03:58:42.899Z",
+      "browser": "149.0.7827.155",
+      "widths": [
+        320,
+        390,
+        768,
+        1024,
+        1440
+      ],
+      "contrast": {
+        "observations": 1016,
+        "views": 10,
+        "failures": 0,
+        "scope": "Visible text on computed solid backgrounds, using normal/large-text thresholds; not complete accessibility certification"
+      },
+      "report_sha256": "4d14b51451281e8ad841c90fb09f7e0b526e63d80841c12cb3fbc52bbc64f28c"
+    },
+    "actual_process_kill_windows": {
+      "total": 32,
+      "financial_and_label_write_boundaries": 24,
+      "warehouse_hold_write_boundaries": 6,
+      "planning_transitions": 2
+    },
+    "mocked_integration_and_guarded_live_tests": 119,
+    "retained_evaluation": {
+      "directory": "evaluation/results/verified-2026-10-14",
+      "seconds": 54.972869,
+      "trials": 336,
+      "scenarios": 40,
+      "passed": 336,
+      "failed": 0,
+      "profiles": {
+        "operator-sop": {
+          "trials": 168,
+          "passed": 168,
+          "failed": 0,
+          "status_counts": {
+            "resolved": 111,
+            "needs-information": 18,
+            "escalated": 24,
+            "rejected": 12,
+            "awaiting-approval": 3
+          },
+          "correct_resolutions": 111,
+          "correct_escalations": 24,
+          "correct_clarification_or_hold": 18,
+          "correct_rejections": 12,
+          "metrics": {
+            "false_resolution_claims": 0,
+            "duplicate_effects": 0,
+            "stale_tracking_at_end": 0,
+            "new_invariant_violations": 0,
+            "initial_invariant_findings": 6,
+            "restart_exercised": 87,
+            "restart_recovered": 84,
+            "crash_boundaries_exercised": 54,
+            "operator_steps": 924,
+            "model_calls": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "intake_seconds": 0,
+            "guarded_without_inference": 0,
+            "external_effect_count": 306,
+            "warehouse_effect_count": 93,
+            "duplicate_warehouse_effects": 0,
+            "model_cost_usd": "0.00"
+          }
+        },
+        "deterministic-intake": {
+          "trials": 168,
+          "passed": 168,
+          "failed": 0,
+          "status_counts": {
+            "resolved": 111,
+            "needs-information": 21,
+            "escalated": 24,
+            "rejected": 12
+          },
+          "correct_resolutions": 111,
+          "correct_escalations": 24,
+          "correct_clarification_or_hold": 21,
+          "correct_rejections": 12,
+          "metrics": {
+            "false_resolution_claims": 0,
+            "duplicate_effects": 0,
+            "stale_tracking_at_end": 0,
+            "new_invariant_violations": 0,
+            "initial_invariant_findings": 6,
+            "restart_exercised": 87,
+            "restart_recovered": 84,
+            "crash_boundaries_exercised": 54,
+            "operator_steps": 762,
+            "model_calls": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "intake_seconds": 0.01040358265163377,
+            "guarded_without_inference": 0,
+            "external_effect_count": 306,
+            "warehouse_effect_count": 93,
+            "duplicate_warehouse_effects": 0,
+            "model_cost_usd": "0.00"
+          }
+        }
+      }
+    },
+    "final_evaluation_rerun": {
+      "directory": "evaluation/runs/run-20261014T035657561908247",
+      "seconds": 47.066765,
+      "trials": 336,
+      "passed": 336,
+      "failed": 0
+    },
+    "actual_local_model_comparison": {
+      "directory": "evaluation/results/local-ai-2026-10-14",
+      "unique_requests": 36,
+      "seeds": [
+        7,
+        19,
+        41
+      ],
+      "seconds": 77.990029,
+      "frozen_before_first_full_run": true,
+      "development_requests_disjoint": true,
+      "profiles": {
+        "deterministic": {
+          "trials": 108,
+          "unique_requests": 36,
+          "correct": 57,
+          "errors": 0,
+          "false_actionable_interpretations": 9,
+          "unnecessary_clarifications": 42,
+          "wrong_actionable_intents": 0,
+          "model_calls": 0,
+          "guarded_without_inference": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "missing_usage_records": 0,
+          "provider_cost_usd": "0.00",
+          "intake_seconds": 0.003902835422195494,
+          "median_intake_seconds": 3.264102269895375e-05,
+          "p95_intake_seconds": 5.820899968966842e-05,
+          "confusion_matrix": {
+            "cancel": {
+              "unknown": 21,
+              "cancel": 15
+            },
+            "address": {
+              "unknown": 21,
+              "address": 15
+            },
+            "unknown": {
+              "unknown": 27,
+              "cancel": 9
+            }
+          },
+          "seed_results": {
+            "7": {
+              "correct": 19,
+              "trials": 36
+            },
+            "19": {
+              "correct": 19,
+              "trials": 36
+            },
+            "41": {
+              "correct": 19,
+              "trials": 36
+            }
+          }
+        },
+        "local-model": {
+          "trials": 108,
+          "unique_requests": 36,
+          "correct": 51,
+          "errors": 0,
+          "false_actionable_interpretations": 21,
+          "unnecessary_clarifications": 9,
+          "wrong_actionable_intents": 27,
+          "model_calls": 102,
+          "guarded_without_inference": 6,
+          "input_tokens": 12108,
+          "output_tokens": 231,
+          "missing_usage_records": 0,
+          "provider_cost_usd": "0.00",
+          "intake_seconds": 77.96755777014187,
+          "median_intake_seconds": 0.754977135482477,
+          "p95_intake_seconds": 0.8460997709771618,
+          "confusion_matrix": {
+            "cancel": {
+              "cancel": 36
+            },
+            "address": {
+              "cancel": 27,
+              "unknown": 9
+            },
+            "unknown": {
+              "unknown": 15,
+              "cancel": 21
+            }
+          },
+          "seed_results": {
+            "7": {
+              "correct": 17,
+              "trials": 36
+            },
+            "19": {
+              "correct": 17,
+              "trials": 36
+            },
+            "41": {
+              "correct": 17,
+              "trials": 36
+            }
+          }
+        }
+      },
+      "cost_limit": "Provider charges only; local electricity/hardware unpriced"
+    },
+    "experimental_local_model_workflow": {
+      "directory": "evaluation/results/local-ai-workflow-2026-10-14",
+      "seconds": 193.618221,
+      "expected_command_exit_code": 1,
+      "trials": 168,
+      "scenarios": 40,
+      "passed": 123,
+      "failed": 45,
+      "profiles": {
+        "local-model": {
+          "trials": 168,
+          "passed": 123,
+          "failed": 45,
+          "status_counts": {
+            "resolved": 111,
+            "needs-information": 21,
+            "escalated": 24,
+            "rejected": 12
+          },
+          "correct_resolutions": 69,
+          "correct_escalations": 24,
+          "correct_clarification_or_hold": 18,
+          "correct_rejections": 12,
+          "metrics": {
+            "false_resolution_claims": 42,
+            "duplicate_effects": 0,
+            "stale_tracking_at_end": 0,
+            "new_invariant_violations": 0,
+            "initial_invariant_findings": 6,
+            "restart_exercised": 69,
+            "restart_recovered": 66,
+            "crash_boundaries_exercised": 36,
+            "operator_steps": 744,
+            "model_calls": 153,
+            "model_input_tokens": 17607,
+            "model_output_tokens": 312,
+            "intake_seconds": 165.40832766401581,
+            "guarded_without_inference": 3,
+            "external_effect_count": 306,
+            "warehouse_effect_count": 93,
+            "duplicate_warehouse_effects": 0,
+            "model_cost_usd": "0.00"
+          }
+        }
+      },
+      "decision": "Rejected from operator API; retained only for explicit evaluation. The scripted driver approved misinterpreted address requests, creating wrong resolved outcomes."
+    },
+    "live_capability_report": {
+      "commands": [
+        ".venv/bin/python -m parcelresolve.cli contracts",
+        ".venv/bin/python -m parcelresolve.guarded_live capabilities"
+      ],
+      "authenticated_provider_checks": "not_run",
+      "live_mutations": "unsupported",
+      "real_provider_writes": 0
+    },
+    "artifacts": {
+      "evaluation/results/verified-2026-10-14": {
+        "manifest_sha256": "82929907f89e3514e9fe6f5cd67f886e854a4944db9efe0366fda82995e9a3bd",
+        "verified_files": 7,
+        "recorded_source_hashes_match": true,
+        "all_file_hashes_and_sizes_verified": true,
+        "lossless_compression_verified": {
+          "traces.jsonl.gz": {
+            "restores": "traces.jsonl",
+            "raw_sha256": "64d495c89fbeef089d0c678209958ecbb7b3de4f97c0b960230382791f3ed8e3",
+            "raw_lines": 9390
+          },
+          "states.tar.gz": {
+            "restores": "states/",
+            "state_file_count": 984,
+            "ledger_provider_pairs": 336
+          }
+        },
+        "verification": "Primary agent independently verified file hashes, current source hashes, compressed trace hashes/counts and archived state bytes against original runs."
+      },
+      "evaluation/results/local-ai-2026-10-14": {
+        "manifest_sha256": "556c69dd7fd4aec157a33081b83fe1663e430586732045df3cde7c1c3e5703a2",
+        "verified_files": 8,
+        "recorded_source_hashes_match": true,
+        "all_file_hashes_and_sizes_verified": true,
+        "lossless_compression_verified": {},
+        "verification": "Primary agent independently verified file hashes, current source hashes, compressed trace hashes/counts and archived state bytes against original runs."
+      },
+      "evaluation/results/local-ai-workflow-2026-10-14": {
+        "manifest_sha256": "ed985f50ecfaee9ae24f0023587222bc77a973a9bfc8f312a7a8cf045f43a81e",
+        "verified_files": 7,
+        "recorded_source_hashes_match": true,
+        "all_file_hashes_and_sizes_verified": true,
+        "lossless_compression_verified": {
+          "traces.jsonl.gz": {
+            "restores": "traces.jsonl",
+            "raw_sha256": "39eb18357715ca4272a73e4a305200d59cfecd52f9ff5f6edf361e6bc6e565f1",
+            "raw_lines": 4620
+          },
+          "states.tar.gz": {
+            "restores": "states/",
+            "state_file_count": 492,
+            "ledger_provider_pairs": 168
+          }
+        },
+        "verification": "Primary agent independently verified file hashes, current source hashes, compressed trace hashes/counts and archived state bytes against original runs."
+      }
+    }
+  },
+  "source_sha256": {
+    ".env.example": "a3ced5185937e99b6a22dba292ec4f637252d1b835132c298a7a8ac0424ae53b",
+    ".github/workflows/verify.yml": "256ad85fbddce06a6c46f8f10f1cd6d61ebd8a22265156a8dd3e60aa96f8a9c9",
+    "Makefile": "a3e951362a9dd65dad824a153411ef9e73e33fbb8cb81afd2878ea70ef4d3090",
+    "frontend/scripts/browser-check.mjs": "2a40f3caeea85bbe98cc5138310a806e20fe2f74aa3bef300b1aeb617759a369",
+    "frontend/scripts/build.mjs": "89bc169c0b94501b8c30bc0d0ecadf63e897254be5d86f65547b56cbc69660a5",
+    "frontend/scripts/presentation-checks.mjs": "ffca92fbf0fd26cc4b8698b774f8dcb048662d05442545f6eca6ff13b6a71698",
+    "frontend/scripts/test.mjs": "35b1ee807647b37e212444e78aff8f306c1dbbe7b0cd12266d33fe1342a401c7",
+    "frontend/src/app.ts": "edeafecd24a8a650e36594c2983d094e768b18b8745b2a844a6fa48a41befca1",
+    "frontend/src/intake-mode.ts": "9b006df9532ae619932d468fa42ffdcd6f4662440996538d1ba45950bdef4357",
+    "frontend/src/styles.css": "a359adecc39158294355afcc11de0238864e41393bc746fb742e95ff8f15b9d9",
+    "package-lock.json": "ef7f558d34e38abfa5388f6df5c41cc19989cf747160590179b8e5e2e3ab4ae8",
+    "package.json": "13a0c6e1c3bfa9622f0f0104def5e6f575f94f11a9e6b74b5bda9745f3e3c63a",
+    "parcelresolve/__init__.py": "af48bc9ebe75e14d3751e0b7e0fefbeaee273f3b9dcdafd323a04df1bbf40329",
+    "parcelresolve/api.py": "7d09b9597b4003c073f94ba6b060a7eec72653e42bc8028c4cd08dd541c84603",
+    "parcelresolve/cli.py": "f81e6ed8d5be7962ae5ea7d2b79cb50d74f4f2b4868ed180abfc05e218e8fc92",
+    "parcelresolve/domain.py": "9473bf06622f43cf46b7cb3220a079b4903fe7f5d54400cdc2e2f6c23c94144d",
+    "parcelresolve/engine.py": "4df76790788c69ec44c9cd3c75a2f73c35bc7c8c5d7409a7e0cabd517cfc5063",
+    "parcelresolve/evaluation.py": "67780eaf1136e65a8292ae401b91d4d6777653274668129fb555293650a67718",
+    "parcelresolve/fixture_model.py": "b98b30e4af70c4ea5e63321ea5b98f75c552c67f242b30f1b53bf0bfcd4a2c72",
+    "parcelresolve/guarded_live.py": "b833d1bb68a3df28aadcd8aaab129507e65156bb4181f8cf10745e1abf321a4d",
+    "parcelresolve/intake.py": "99466b4178a19249255dbb6c7469207fb3e75f40c53ce53db2b4a6ecfd6ff5be",
+    "parcelresolve/integrations.py": "8252e40fdc8f0a8eb448767603e8752d2aee7703789958dd4bd40ffa1feb7037",
+    "parcelresolve/local_model.py": "c9afa4addf4bb73a588eb4103de4e47152022ff3f3a1800b948a7e97cae119a7",
+    "parcelresolve/model_evaluation.py": "ecb176dd74b85af03a2a654e08de050719af41d9f5cffd07c2129f6d9a3fc33e",
+    "parcelresolve/seed.py": "9d5238cd482d595c8260b717c47597414decc0573369d5397b91db35bb900342",
+    "parcelresolve/simulator.py": "513eda04e6449a5ad9468978da56160a96b881f63edfab320c6d467b5e99a7f6",
+    "parcelresolve/storage.py": "cf056ffa9fba0fd7142710c19e73aa1d547f58220a740915ea9a178a4cf6063d",
+    "pyproject.toml": "bbad8d8ace0aacda6dac8a9ed60296fe472c9f7d77a0d1e09f93be01182f98f3",
+    "tests/test_api.py": "7dd9e851450c234453f0594dbf88f6fd1e64562d1996fd7b82a49bd68143c8ec",
+    "tests/test_case_intake_evidence.py": "7bfb38d089d6ce4e07c3c0d1bc20eac5a6c5f9042ab61728cef7e513d96fa17f",
+    "tests/test_evaluation.py": "8dfef8a705c4093cb1d03355e3370237c1392f87b9a161f37082ecd4f41d0c18",
+    "tests/test_first_slice.py": "38d7509e89295e02d3f26fe39e99b4c292b3e357219ef6ec4f670ee1c10c7cda",
+    "tests/test_guarded_live.py": "8b8b95ffa934aa54b5264c5e384bb248f01739f804bb00506549f0c8d40fb7b1",
+    "tests/test_intake.py": "9ade0c209423b327d86c53f255bc18dcdea43c7a72614474da5af12ba7ce1028",
+    "tests/test_integrations.py": "00bbd3384b5a33284f9c35262966765ab57e0c33995a078ebeb7a66eff9c98a7",
+    "tests/test_recovery.py": "83a2f72106e1ed913253cd88a90d42c8e19665a43614a5a6224a40b75a0aa8bf",
+    "tests/test_warehouse_recovery.py": "de063d23732511e8d852459bcd950bc7465787a52db0554692a51873e3088c84",
+    "uv.lock": "707e06ed83bd94586ac67d4582b8d6b50120ab81e6a9fbafd876058bfd5aa870"
+  },
+  "historical_record": "docs/verification-results-2026-10-13.json",
+  "unperformed": [
+    "authenticated merchant/carrier/gateway/warehouse checks",
+    "verified live mutation contracts and real recovery execution",
+    "paid hosted model calls and hosted model quality/cost comparison",
+    "customer communications",
+    "public deployment",
+    "hosted CI",
+    "merchant handling-time/adoption/customer-outcome study",
+    "production security/storage/load/backup validation"
+  ]
+}

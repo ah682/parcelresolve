@@ -1,0 +1,30 @@
+[project]
+name = "parcelresolve"
+version = "0.1.0"
+description = "A local, evidence-driven shipping exception recovery desk"
+requires-python = ">=3.12,<3.13"
+dependencies = ["fastapi==0.135.1", "uvicorn==0.41.0", "pydantic==2.12.5", "httpx==0.28.1"]
+
+[dependency-groups]
+dev = ["pytest==9.0.2", "ruff==0.15.6", "mypy==1.19.1"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["fastapi.Depends"]
+
+[tool.mypy]
+python_version = "3.12"
+check_untyped_defs = true
+ignore_missing_imports = true
+

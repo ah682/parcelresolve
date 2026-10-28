@@ -1,0 +1,18 @@
+{
+  "name": "parcelresolve-desk",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node frontend/scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "browser:check": "node frontend/scripts/browser-check.mjs",
+    "dev": "make demo",
+    "test": "node frontend/scripts/test.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "typescript": "6.0.3",
+    "playwright-core": "1.64.0"
+  }
+}

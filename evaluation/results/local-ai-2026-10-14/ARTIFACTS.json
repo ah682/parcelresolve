@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "description": "Original first-pass frozen actual-model comparison. Raw JSONL retained uncompressed. No model predictions were replaced or rerun.",
+  "files": {
+    "intake-benchmark.json": {
+      "bytes": 14485,
+      "sha256": "3a7e1678430631c43d03ae629dd609b72746da9ede34868cce65bd71f431d712"
+    },
+    "intake-development.json": {
+      "bytes": 534,
+      "sha256": "5c4714cf407ba8b7198ecaef6e6ca9635e76f5ee0f87f0f89623d0a2e537b63b"
+    },
+    "local-model.json": {
+      "bytes": 1624,
+      "sha256": "259c4e182241f3b3aa19c19939ba6352b2d8aa90194410d98d5fe69c05ee989d"
+    },
+    "model-comparison-freeze.json": {
+      "bytes": 3520,
+      "sha256": "97d74604c92bbf48d2b2027fb85e52f6ffc17726db276126284b90fef40c8080"
+    },
+    "report.md": {
+      "bytes": 4723,
+      "sha256": "f133d6a81dcccb8f3a4560c7c76c280e8a835c2455e750af75fe02a36fa4baa4"
+    },
+    "results.json": {
+      "bytes": 326789,
+      "sha256": "b728a66b828bef1bd3fbd90e8f0f4b3d7e7dcccfa72d325fbdab650d7a16d6ca"
+    },
+    "run-start.json": {
+      "bytes": 477,
+      "sha256": "d020f57f32607c96f3370c9a75bb9cc19a32bdb6bfbceb7e73f42a864f054b14"
+    },
+    "traces.jsonl": {
+      "bytes": 478519,
+      "sha256": "1608070cbd40918ba4cf8c6fb86b8869f71c35cd5b758a45ff16fd7fc4d3a6ae"
+    }
+  }
+}

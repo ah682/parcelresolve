@@ -1,0 +1,131 @@
+{
+  "release": "0.1.0",
+  "recorded_on": "2026-10-13",
+  "mode": "offline local simulator",
+  "python": "3.12.3",
+  "checks": {
+    "combined_command": "npm test -- browser",
+    "pytest": {
+      "passed": 184,
+      "seconds": 8.77,
+      "warnings": 1,
+      "warning": "Starlette httpx test-client deprecation"
+    },
+    "ruff_check": "passed",
+    "ruff_format": "passed",
+    "mypy": {
+      "status": "passed",
+      "source_files": 11
+    },
+    "typescript": "passed",
+    "frontend_build": "passed",
+    "browser": {
+      "checks_passed": 13,
+      "errors": [],
+      "checked_at": "2026-10-13T17:12:09.359Z",
+      "widths": [
+        320,
+        390,
+        768,
+        1024,
+        1440
+      ]
+    },
+    "fresh_python_install": {
+      "packages": 26,
+      "smoke_tests_passed": 99,
+      "seconds": 0.26
+    },
+    "actual_process_kill_boundaries": 24,
+    "retained_evaluation": {
+      "trials": 336,
+      "scenarios": 40,
+      "passed": 336,
+      "failed": 0,
+      "profiles": {
+        "operator-sop": {
+          "trials": 168,
+          "passed": 168,
+          "failed": 0,
+          "status_counts": {
+            "resolved": 111,
+            "needs-information": 18,
+            "escalated": 24,
+            "rejected": 12,
+            "awaiting-approval": 3
+          },
+          "correct_resolutions": 111,
+          "correct_escalations": 24,
+          "correct_clarification_or_hold": 18,
+          "correct_rejections": 12,
+          "metrics": {
+            "false_resolution_claims": 0,
+            "duplicate_effects": 0,
+            "stale_tracking_at_end": 0,
+            "new_invariant_violations": 0,
+            "initial_invariant_findings": 6,
+            "restart_exercised": 87,
+            "restart_recovered": 84,
+            "crash_boundaries_exercised": 54,
+            "operator_steps": 924,
+            "model_calls": 0,
+            "external_effect_count": 306,
+            "model_cost_usd": "0.00"
+          }
+        },
+        "deterministic-intake": {
+          "trials": 168,
+          "passed": 168,
+          "failed": 0,
+          "status_counts": {
+            "resolved": 111,
+            "needs-information": 21,
+            "escalated": 24,
+            "rejected": 12
+          },
+          "correct_resolutions": 111,
+          "correct_escalations": 24,
+          "correct_clarification_or_hold": 21,
+          "correct_rejections": 12,
+          "metrics": {
+            "false_resolution_claims": 0,
+            "duplicate_effects": 0,
+            "stale_tracking_at_end": 0,
+            "new_invariant_violations": 0,
+            "initial_invariant_findings": 6,
+            "restart_exercised": 87,
+            "restart_recovered": 84,
+            "crash_boundaries_exercised": 54,
+            "operator_steps": 762,
+            "model_calls": 0,
+            "external_effect_count": 306,
+            "model_cost_usd": "0.00"
+          }
+        }
+      }
+    }
+  },
+  "source_sha256": {
+    "parcelresolve/domain.py": "1fcbc991aa4144544a8da3a1befd768e5c57c008896b0d9ef2b6e99093090e30",
+    "parcelresolve/engine.py": "545cd3323faa7c2bc3760dc679fb74dfa18e76d25d917a5fe01cdc9178ce6787",
+    "parcelresolve/simulator.py": "3945754881efe65aa9117180eb31968cec929280001bc179a530eadfd4db33e6",
+    "parcelresolve/intake.py": "02ed6294c772504e71bd31acd4edaebfe57339da3c72f3bfc18331dea29b0f9d",
+    "parcelresolve/__init__.py": "af48bc9ebe75e14d3751e0b7e0fefbeaee273f3b9dcdafd323a04df1bbf40329",
+    "parcelresolve/api.py": "4340d390eb06cd84b32fa0e76074563dedc3ec5c4ac6249271e07d85c5194dd0",
+    "parcelresolve/integrations.py": "c4c890b5e2e3567d0920abc2dbc636baa772d5569c5ed5fb5d14cc58d695b9c0",
+    "parcelresolve/seed.py": "9d5238cd482d595c8260b717c47597414decc0573369d5397b91db35bb900342",
+    "parcelresolve/cli.py": "f81e6ed8d5be7962ae5ea7d2b79cb50d74f4f2b4868ed180abfc05e218e8fc92",
+    "parcelresolve/storage.py": "3ec836e8b55c83b2485072b3277d6194b989992995ba71d428256d51fbd08b28",
+    "parcelresolve/evaluation.py": "94ab8c1b571b17fd197b062e7139c2e8d39d3e496f9b982f37945e2169a4d549",
+    "frontend/src/styles.css": "10232cf5481b54cc8b620dc0f248a0327dee62e05aae7bb2286a132029190a57",
+    "frontend/src/app.ts": "ed60ecaec7cb7a40c6610f323056895b25254cde7e911763120768df509acaec"
+  },
+  "unperformed": [
+    "authenticated merchant/carrier/warehouse checks",
+    "live model calls",
+    "customer communications",
+    "public deployment",
+    "hosted CI",
+    "merchant handling-time study"
+  ]
+}

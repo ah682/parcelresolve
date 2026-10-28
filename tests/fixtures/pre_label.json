@@ -1,0 +1,9 @@
+{
+  "id": "acceptance-pre-label-v1",
+  "provenance": "Synthetic development fixture authored for this project; not merchant data",
+  "order_id": "1042",
+  "request": "Please cancel my entire order.",
+  "captured_minor": 6800,
+  "currency": "GBP",
+  "expected": {"status": "resolved", "commercial_state": "cancelled", "refunded_minor": 6800, "active_labels": 0, "customer_message_sent": false}
+}

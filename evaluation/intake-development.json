@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "source": "Original synthetic development-only probes; no training or fine-tuning",
+  "records": [
+    {
+      "id": "intake-dev-01",
+      "text": "I would like to cancel the entire purchase, please.",
+      "intent": "cancel"
+    },
+    {
+      "id": "intake-dev-02",
+      "text": "Please amend my delivery address to the confirmed new one.",
+      "intent": "address"
+    },
+    {
+      "id": "intake-dev-03",
+      "text": "Can you explain the shipping options?",
+      "intent": "unknown"
+    }
+  ]
+}

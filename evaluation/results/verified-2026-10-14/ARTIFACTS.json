@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "source_run": "evaluation/runs/run-20261014T035301406663117",
+  "mode": "deterministic desk and operator SOP; no model inference",
+  "lossless_compression": {
+    "traces.jsonl.gz": {
+      "restores": "traces.jsonl",
+      "raw_sha256": "64d495c89fbeef089d0c678209958ecbb7b3de4f97c0b960230382791f3ed8e3",
+      "raw_lines": 9390
+    },
+    "states.tar.gz": {
+      "restores": "states/",
+      "state_file_count": 984,
+      "ledger_provider_pairs": 336
+    }
+  },
+  "files": {
+    "catalog.json": {
+      "bytes": 45798,
+      "sha256": "f9a6d69e7db210b26b7a9dac5df250810b0caafeb0d2784873efb4048a7bd389"
+    },
+    "manifest.json": {
+      "bytes": 1710,
+      "sha256": "265d0bbbbeaf212eb3c0d833c2648f42baa59180d4d71bfcdc7643919ee47173"
+    },
+    "report.md": {
+      "bytes": 5246,
+      "sha256": "26efcd5ae660a760fcffcb97cc3ca975cffc9ffd8119d3f324504877c1c96a17"
+    },
+    "results.json": {
+      "bytes": 1358008,
+      "sha256": "ee1332f56a7e19a9a4f280b5df508020721c7ea69791aa1355748ef71e543c71"
+    },
+    "seeds.json": {
+      "bytes": 36548,
+      "sha256": "edf56dcf61a15ebc676b5c5bf8dd314a65fda00defa779e5cbeb3742320dda32"
+    },
+    "states.tar.gz": {
+      "bytes": 3209186,
+      "sha256": "ebfa718c35e4857a1e39ba1bda10d11a35335993efa8287ff30d36e646716ff8"
+    },
+    "traces.jsonl.gz": {
+      "bytes": 1832589,
+      "sha256": "29c2a56e7348dddb3243602fa995ee3fdefd9c1e972043c8fdfc0ed7e9b032d1"
+    }
+  }
+}

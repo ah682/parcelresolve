@@ -1,0 +1,83 @@
+{
+  "passed": false,
+  "created_at": "2026-10-14T03:38:55.601Z",
+  "checks": [
+    {
+      "name": "Live local API loaded six seeded cases with honest mode labels",
+      "passed": true
+    },
+    {
+      "name": "Responsive layouts at 320, 390, 768, 1024 and 1440px without document overflow",
+      "passed": true
+    },
+    {
+      "name": "Case search and recoverable empty state",
+      "passed": true
+    },
+    {
+      "name": "Printed label is distinct from physical dispatch; evidence and keyboard-accessible draft tabs",
+      "passed": true
+    },
+    {
+      "name": "Read-only role removes mutation authority and explains the role",
+      "passed": true
+    },
+    {
+      "name": "Pre-label cancellation approved, executed and verified through UI",
+      "passed": true
+    },
+    {
+      "name": "Post-label cancellation requires hold, approval, void and final verification",
+      "passed": true
+    },
+    {
+      "name": "Address correction with one replacement label completes through UI",
+      "passed": true
+    },
+    {
+      "name": "Lost refund response reconciles to one refund through UI",
+      "passed": true
+    },
+    {
+      "name": "Carrier void rejection remains visibly escalated",
+      "passed": true
+    },
+    {
+      "name": "Partially dispatched case stays under operator review",
+      "passed": true
+    },
+    {
+      "name": "New request, ambiguity clarification, fault injection, partial failure and safe retry",
+      "passed": true
+    },
+    {
+      "name": "Customer explanation remains a local draft; no console/page/network errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "failure": "AssertionError [ERR_ASSERTION]: Text contrast issues: [{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"Resolve\",\"color\":\"rgb(99, 132, 119)\",\"background\":[252.2,252.48000000000002,251.64],\"ratio\":4.03,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"workspace-label\",\"text\":\"Recovery workspace\",\"color\":\"rgb(128, 144, 135)\",\"background\":[252.2,252.48000000000002,251.64],\"ratio\":3.28,\"required\":4.5},{\"tag\":\"DIV\",\"class_name\":\"eyebrow\",\"text\":\"OPERATIONS / EXCEPTION RECOVERY\",\"color\":\"rgb(104, 121, 105)\",\"background\":[245,246,243],\"ratio\":4.28,\"required\":4.5},{\"tag\":\"P\",\"class_name\":\"\",\"text\":\"Resolve the exception. Verify the outcome.\",\"color\":\"rgb(108, 125, 111)\",\"background\":[245,246,243],\"ratio\":4.03,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"metric-caption\",\"text\":\"Across the recovery desk\",\"color\":\"rgb(114, 125, 113)\",\"background\":[255,255,255],\"ratio\":4.3,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"metric-caption\",\"text\":\"Evidence or operator review\",\"color\":\"rgb(114, 125, 113)\",\"background\":[255,255,255],\"ratio\":4.3,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"metric-caption\",\"text\":\"A plan is ready to review\",\"color\":\"rgb(114, 125, 113)\",\"background\":[255,255,255],\"ratio\":4.3,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"metric-caption\",\"text\":\"Confirmed by read-back\",\"color\":\"rgb(114, 125, 113)\",\"background\":[255,255,255],\"ratio\":4.3,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"6\",\"color\":\"rgb(124, 138, 127)\",\"background\":[237,240,232],\"ratio\":3.14,\"required\":4.5},{\"tag\":\"KBD\",\"class_name\":\"\",\"text\":\"/\",\"color\":\"rgb(161, 167, 153)\",\"background\":[243,245,238],\"ratio\":2.25,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"order-number\",\"text\":\"#1047\",\"color\":\"rgb(111, 128, 110)\",\"background\":[253,253,250],\"ratio\":4.13,\"required\":4.5},{\"tag\":\"TIME\",\"class_name\":\"\",\"text\":\"04:38\",\"color\":\"rgb(114, 129, 110)\",\"background\":[253,253,250],\"ratio\":4.06,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"customer-avatar avatar-0\",\"text\":\"CJ\",\"color\":\"rgb(108, 130, 98)\",\"background\":[225,233,218],\"ratio\":3.37,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"Cancellation request\",\"color\":\"rgb(106, 123, 100)\",\"background\":[253,253,250],\"ratio\":4.45,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"order-number\",\"text\":\"#1046\",\"color\":\"rgb(111, 128, 110)\",\"background\":[239,244,235],\"ratio\":3.77,\"required\":4.5},{\"tag\":\"TIME\",\"class_name\":\"\",\"text\":\"04:38\",\"color\":\"rgb(114, 129, 110)\",\"background\":[239,244,235],\"ratio\":3.7,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"customer-avatar avatar-1\",\"text\":\"AB\",\"color\":\"rgb(113, 136, 150)\",\"background\":[228,233,237],\"ratio\":3.03,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"Cancellation request\",\"color\":\"rgb(106, 123, 100)\",\"background\":[239,244,235],\"ratio\":4.06,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"case-amount\",\"text\":\"£68.00\",\"color\":\"rgb(101, 121, 95)\",\"background\":[239,244,235],\"ratio\":4.22,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"order-number\",\"text\":\"#1045\",\"color\":\"rgb(111, 128, 110)\",\"background\":[253,253,250],\"ratio\":4.13,\"required\":4.5},{\"tag\":\"TIME\",\"class_name\":\"\",\"text\":\"04:38\",\"color\":\"rgb(114, 129, 110)\",\"background\":[253,253,250],\"ratio\":4.06,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"customer-avatar avatar-2\",\"text\":\"RC\",\"color\":\"rgb(165, 142, 117)\",\"background\":[234,228,220],\"ratio\":2.47,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"Cancellation request\",\"color\":\"rgb(106, 123, 100)\",\"background\":[253,253,250],\"ratio\":4.45,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"status status-received\",\"text\":\"New request\",\"color\":\"rgb(130, 144, 119)\",\"background\":[242,244,236],\"ratio\":3.05,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"order-number\",\"text\":\"#1044\",\"color\":\"rgb(111, 128, 110)\",\"background\":[253,253,250],\"ratio\":4.13,\"required\":4.5},{\"tag\":\"TIME\",\"class_name\":\"\",\"text\":\"04:38\",\"color\":\"rgb(114, 129, 110)\",\"background\":[253,253,250],\"ratio\":4.06,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"customer-avatar avatar-3\",\"text\":\"SR\",\"color\":\"rgb(141, 128, 150)\",\"background\":[233,229,237],\"ratio\":2.98,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"Address correction\",\"color\":\"rgb(106, 123, 100)\",\"background\":[253,253,250],\"ratio\":4.45,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"order-number\",\"text\":\"#1043\",\"color\":\"rgb(111, 128, 110)\",\"background\":[253,253,250],\"ratio\":4.13,\"required\":4.5},{\"tag\":\"TIME\",\"class_name\":\"\",\"text\":\"04:38\",\"color\":\"rgb(114, 129, 110)\",\"background\":[253,253,250],\"ratio\":4.06,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"customer-avatar avatar-0\",\"text\":\"ME\",\"color\":\"rgb(108, 130, 98)\",\"background\":[225,233,218],\"ratio\":3.37,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"Cancellation request\",\"color\":\"rgb(106, 123, 100)\",\"background\":[253,253,250],\"ratio\":4.45,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"order-number\",\"text\":\"#1042\",\"color\":\"rgb(111, 128, 110)\",\"background\":[253,253,250],\"ratio\":4.13,\"required\":4.5},{\"tag\":\"TIME\",\"class_name\":\"\",\"text\":\"04:38\",\"color\":\"rgb(114, 129, 110)\",\"background\":[253,253,250],\"ratio\":4.06,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"customer-avatar avatar-1\",\"text\":\"JT\",\"color\":\"rgb(113, 136, 150)\",\"background\":[228,233,237],\"ratio\":3.03,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"Cancellation request\",\"color\":\"rgb(106, 123, 100)\",\"background\":[253,253,250],\"ratio\":4.45,\"required\":4.5},{\"tag\":\"DIV\",\"class_name\":\"queue-footer\",\"text\":\"Evidence before action, always.\",\"color\":\"rgb(106, 125, 94)\",\"background\":[250,251,246],\"ratio\":4.29,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"CASE 929230C803\",\"color\":\"rgb(107, 125, 97)\",\"background\":[255,255,255],\"ratio\":4.44,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"ORDER #1046\",\"color\":\"rgb(107, 125, 97)\",\"background\":[255,255,255],\"ratio\":4.44,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"source-chip\",\"text\":\"WooCommerce + ShipStation\",\"color\":\"rgb(104, 125, 93)\",\"background\":[244,246,239],\"ratio\":4.12,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"dot-separator\",\"text\":\"·\",\"color\":\"rgb(195, 203, 186)\",\"background\":[255,255,255],\"ratio\":1.67,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"dot-separator\",\"text\":\"·\",\"color\":\"rgb(195, 203, 186)\",\"background\":[255,255,255],\"ratio\":1.67,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"tab-count\",\"text\":\"7\",\"color\":\"rgb(106, 133, 80)\",\"background\":[240,244,232],\"ratio\":3.7,\"required\":4.5},{\"tag\":\"P\",\"class_name\":\"\",\"text\":\"Label recovery — awaiting a current, positively acknowledged warehouse\",\"color\":\"rgb(135, 113, 62)\",\"background\":[251,248,237],\"ratio\":4.43,\"required\":4.5},{\"tag\":\"LI\",\"class_name\":\"\",\"text\":\"Label printed. Physical dispatch is not confirmed; a current warehouse\",\"color\":\"rgb(141, 112, 45)\",\"background\":[251,248,237],\"ratio\":4.4,\"required\":4.5},{\"tag\":\"LI\",\"class_name\":\"\",\"text\":\"ShipStation says Shipped, which can mean a label was created. This is \",\"color\":\"rgb(141, 112, 45)\",\"background\":[251,248,237],\"ratio\":4.4,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"simulation-note\",\"text\":\"This control creates a simulated warehouse acknowledgment.\",\"color\":\"rgb(114, 131, 88)\",\"background\":[255,255,255],\"ratio\":4.12,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"action-helper\",\"text\":\"Investigation reads the current records\",\"color\":\"rgb(106, 126, 96)\",\"background\":[255,255,255],\"ratio\":4.41,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"Label recovery — awaiting a current, positively acknowledged warehouse\",\"color\":\"rgb(106, 126, 96)\",\"background\":[255,255,255],\"ratio\":4.41,\"required\":4.5},{\"tag\":\"TIME\",\"class_name\":\"\",\"text\":\"04:38\",\"color\":\"rgb(115, 139, 86)\",\"background\":[255,255,255],\"ratio\":3.78,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"Warehouse evidence: unknown.\",\"color\":\"rgb(106, 126, 96)\",\"background\":[255,255,255],\"ratio\":4.41,\"required\":4.5},{\"tag\":\"TIME\",\"class_name\":\"\",\"text\":\"04:38\",\"color\":\"rgb(115, 139, 86)\",\"background\":[255,255,255],\"ratio\":3.78,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"1 active label(s). Label status does not establish physical dispatch.\",\"color\":\"rgb(106, 126, 96)\",\"background\":[255,255,255],\"ratio\":4.41,\"required\":4.5},{\"tag\":\"TIME\",\"class_name\":\"\",\"text\":\"04:38\",\"color\":\"rgb(115, 139, 86)\",\"background\":[255,255,255],\"ratio\":3.78,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"Observed 14 Oct, 04:38\",\"color\":\"rgb(113, 135, 80)\",\"background\":[252,253,250],\"ratio\":3.89,\"required\":4.5},{\"tag\":\"BUTTON\",\"class_name\":\"text-button\",\"text\":\"Refresh evidence\",\"color\":\"rgb(100, 129, 63)\",\"background\":[252,253,250],\"ratio\":4.33,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"All changes stay in this local simulator.\",\"color\":\"rgb(110, 128, 102)\",\"background\":[245,246,243],\"ratio\":3.92,\"required\":4.5},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"Intake: Deterministic rules\",\"color\":\"rgb(110, 128, 102)\",\"background\":[245,246,243],\"ratio\":3.92,\"required\":4.5}]\n\n58 !== 0\n",
+  "mutation_routes": [
+    "/api/cases/case-47e673e6d6/approve",
+    "/api/cases/case-47e673e6d6/execute",
+    "/api/cases/case-c5011fae96/hold",
+    "/api/cases/case-c5011fae96/approve",
+    "/api/cases/case-c5011fae96/execute",
+    "/api/cases/case-2c278ec9c1/hold",
+    "/api/cases/case-2c278ec9c1/approve",
+    "/api/cases/case-2c278ec9c1/execute",
+    "/api/cases/case-945d201deb/investigate",
+    "/api/cases/case-945d201deb/approve",
+    "/api/cases/case-945d201deb/execute",
+    "/api/cases/case-945d201deb/retry",
+    "/api/cases/case-929230c803/hold",
+    "/api/cases/case-929230c803/approve",
+    "/api/cases/case-929230c803/execute",
+    "/api/cases",
+    "/api/cases/case-e091a4f91e/clarify",
+    "/api/cases/case-e091a4f91e/fault",
+    "/api/cases/case-e091a4f91e/approve",
+    "/api/cases/case-e091a4f91e/execute",
+    "/api/cases/case-e091a4f91e/retry"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "checks": [
+    {
+      "name": "Loading states announce progress and finish before enabling the evidence view",
+      "passed": true,
+      "evidence_type": "controlled browser response fixture"
+    },
+    {
+      "name": "Roving tabs, Home/End, arrow navigation and search shortcut retain keyboard focus",
+      "passed": true,
+      "evidence_type": "controlled browser response fixture"
+    },
+    {
+      "name": "Invalid and whitespace-only forms make no API write; server errors preserve input and Escape restores focus",
+      "passed": true,
+      "evidence_type": "controlled browser response fixture"
+    },
+    {
+      "name": "Service failure explains unavailable evidence and disables stale actions; reconnect recovers",
+      "passed": true,
+      "evidence_type": "controlled browser response fixture"
+    },
+    {
+      "name": "Offline startup and genuinely empty queue have recoverable, honest states",
+      "passed": true,
+      "evidence_type": "controlled browser response fixture"
+    },
+    {
+      "name": "Empty order catalog offers an explanation instead of an unusable form",
+      "passed": true,
+      "evidence_type": "controlled browser response fixture"
+    },
+    {
+      "name": "Configured intake mode and actual result provenance remain distinct, including mobile and recorded fixtures",
+      "passed": true,
+      "evidence_type": "controlled browser response fixture"
+    },
+    {
+      "name": "Untrusted request markup is literal text and triggers no script or mutation",
+      "passed": true,
+      "evidence_type": "controlled browser response fixture"
+    }
+  ],
+  "errors": [],
+  "contrasts": [
+    {
+      "label": "Address form with explicit invalid state",
+      "checked": 17,
+      "minimum_ratio": 4.74,
+      "failures": [],
+      "scope": "Visible text with computed solid backgrounds; not a complete accessibility certification."
+    },
+    {
+      "label": "Unavailable service with retained evidence",
+      "checked": 96,
+      "minimum_ratio": 3.84,
+      "failures": [],
+      "scope": "Visible text with computed solid backgrounds; not a complete accessibility certification."
+    }
+  ],
+  "disclosure": "Presentation-only controlled responses. No real model inference, provider behavior or backend recovery is inferred from these checks."
+}

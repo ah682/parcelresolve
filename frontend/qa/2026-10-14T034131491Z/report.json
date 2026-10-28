@@ -1,0 +1,89 @@
+{
+  "passed": false,
+  "created_at": "2026-10-14T03:41:36.611Z",
+  "checks": [
+    {
+      "name": "Live local API loaded six seeded cases with honest mode labels",
+      "passed": true
+    },
+    {
+      "name": "Responsive layouts at 320, 390, 768, 1024 and 1440px without document overflow",
+      "passed": true
+    },
+    {
+      "name": "Case search and recoverable empty state",
+      "passed": true
+    },
+    {
+      "name": "Printed label is distinct from physical dispatch; evidence and keyboard-accessible draft tabs",
+      "passed": true
+    },
+    {
+      "name": "Read-only role removes mutation authority and explains the role",
+      "passed": true
+    },
+    {
+      "name": "Pre-label cancellation approved, executed and verified through UI",
+      "passed": true
+    },
+    {
+      "name": "Lost warehouse response stays unconfirmed until the same operation is reconciled",
+      "passed": true
+    },
+    {
+      "name": "Post-label cancellation requires hold, approval, void and final verification",
+      "passed": true
+    },
+    {
+      "name": "Address correction with one replacement label completes through UI",
+      "passed": true
+    },
+    {
+      "name": "Lost refund response reconciles to one refund through UI",
+      "passed": true
+    },
+    {
+      "name": "Carrier void rejection remains visibly escalated",
+      "passed": true
+    },
+    {
+      "name": "Partially dispatched case stays under operator review",
+      "passed": true
+    },
+    {
+      "name": "New request, ambiguity clarification, fault injection, partial failure and safe retry",
+      "passed": true
+    },
+    {
+      "name": "Customer explanation remains a local draft; no console/page/network errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "failure": "AssertionError [ERR_ASSERTION]: Presentation contrast failures: [{\"label\":\"Address form with explicit invalid state\",\"checked\":17,\"minimum_ratio\":2.96,\"failures\":[{\"tag\":\"P\",\"class_name\":\"\",\"text\":\"Choose a demo order and record what the customer needs.\",\"color\":\"rgb(107, 132, 80)\",\"background\":[255,255,255],\"ratio\":4.17,\"required\":4.5},{\"tag\":\"DIV\",\"class_name\":\"form-error\",\"text\":\"Recipient name: Please fill in this field.\",\"color\":\"rgb(178, 136, 85)\",\"background\":[255,244,233],\"ratio\":2.96,\"required\":4.5}],\"scope\":\"Visible text with computed solid backgrounds; not a complete accessibility certification.\"}]\n\n2 !== 0\n",
+  "mutation_routes": [
+    "/api/cases/case-e005b613ce/approve",
+    "/api/cases/case-e005b613ce/execute",
+    "/api/cases/case-442caee0ac/fault",
+    "/api/cases/case-442caee0ac/hold",
+    "/api/cases/case-442caee0ac/retry",
+    "/api/cases/case-442caee0ac/approve",
+    "/api/cases/case-442caee0ac/execute",
+    "/api/cases/case-368735b1dc/hold",
+    "/api/cases/case-368735b1dc/approve",
+    "/api/cases/case-368735b1dc/execute",
+    "/api/cases/case-ae3911721e/investigate",
+    "/api/cases/case-ae3911721e/approve",
+    "/api/cases/case-ae3911721e/execute",
+    "/api/cases/case-ae3911721e/retry",
+    "/api/cases/case-9454d787ac/hold",
+    "/api/cases/case-9454d787ac/approve",
+    "/api/cases/case-9454d787ac/execute",
+    "/api/cases",
+    "/api/cases/case-48608b795d/clarify",
+    "/api/cases/case-48608b795d/fault",
+    "/api/cases/case-48608b795d/approve",
+    "/api/cases/case-48608b795d/execute",
+    "/api/cases/case-48608b795d/retry"
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "passed": false,
+  "created_at": "2026-10-14T03:40:38.781Z",
+  "checks": [
+    {
+      "name": "Live local API loaded six seeded cases with honest mode labels",
+      "passed": true
+    },
+    {
+      "name": "Responsive layouts at 320, 390, 768, 1024 and 1440px without document overflow",
+      "passed": true
+    },
+    {
+      "name": "Case search and recoverable empty state",
+      "passed": true
+    },
+    {
+      "name": "Printed label is distinct from physical dispatch; evidence and keyboard-accessible draft tabs",
+      "passed": true
+    },
+    {
+      "name": "Read-only role removes mutation authority and explains the role",
+      "passed": true
+    },
+    {
+      "name": "Pre-label cancellation approved, executed and verified through UI",
+      "passed": true
+    },
+    {
+      "name": "Lost warehouse response stays unconfirmed until the same operation is reconciled",
+      "passed": true
+    },
+    {
+      "name": "Post-label cancellation requires hold, approval, void and final verification",
+      "passed": true
+    },
+    {
+      "name": "Address correction with one replacement label completes through UI",
+      "passed": true
+    },
+    {
+      "name": "Lost refund response reconciles to one refund through UI",
+      "passed": true
+    },
+    {
+      "name": "Carrier void rejection remains visibly escalated",
+      "passed": true
+    },
+    {
+      "name": "Partially dispatched case stays under operator review",
+      "passed": true
+    },
+    {
+      "name": "New request, ambiguity clarification, fault injection, partial failure and safe retry",
+      "passed": true
+    },
+    {
+      "name": "Customer explanation remains a local draft; no console/page/network errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "failure": "AssertionError [ERR_ASSERTION]: Text contrast issues: [{\"tag\":\"P\",\"class_name\":\"\",\"text\":\"Order, shipping, warehouse and recovery events in one audit trail.\",\"color\":\"rgb(106, 132, 73)\",\"background\":[255,255,255],\"ratio\":4.19,\"required\":4.5,\"snapshot\":\"Evidence timeline\"},{\"tag\":\"SMALL\",\"class_name\":\"\",\"text\":\"LN-001\",\"color\":\"rgb(106, 133, 68)\",\"background\":[255,255,255],\"ratio\":4.16,\"required\":4.5,\"snapshot\":\"Evidence timeline\"},{\"tag\":\"SMALL\",\"class_name\":\"\",\"text\":\"CR-014\",\"color\":\"rgb(106, 133, 68)\",\"background\":[255,255,255],\"ratio\":4.16,\"required\":4.5,\"snapshot\":\"Evidence timeline\"},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"To Morgan Ellis\",\"color\":\"rgb(102, 131, 59)\",\"background\":[251,253,246],\"ratio\":4.2,\"required\":4.5,\"snapshot\":\"Customer draft\"},{\"tag\":\"SPAN\",\"class_name\":\"draft-only\",\"text\":\"Draft only\",\"color\":\"rgb(100, 134, 56)\",\"background\":[245,249,235],\"ratio\":3.92,\"required\":4.5,\"snapshot\":\"Customer draft\"},{\"tag\":\"BUTTON\",\"class_name\":\"button secondary\",\"text\":\"Copy draft\",\"color\":\"rgb(114, 149, 78)\",\"background\":[255,255,255],\"ratio\":3.43,\"required\":4.5,\"snapshot\":\"Customer draft\"},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"Simulated provider\",\"color\":\"rgb(114, 134, 81)\",\"background\":[252,253,248],\"ratio\":3.92,\"required\":4.5,\"snapshot\":\"Uncertain warehouse hold\"},{\"tag\":\"P\",\"class_name\":\"\",\"text\":\"Warehouse hold response was lost; reconcile before any further hold re\",\"color\":\"rgb(108, 130, 78)\",\"background\":[252,253,248],\"ratio\":4.16,\"required\":4.5,\"snapshot\":\"Uncertain warehouse hold\"},{\"tag\":\"SPAN\",\"class_name\":\"attempt-state uncertain\",\"text\":\"Uncertain\",\"color\":\"rgb(139, 119, 40)\",\"background\":[252,253,248],\"ratio\":4.31,\"required\":4.5,\"snapshot\":\"Uncertain warehouse hold\"},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"Simulated provider\",\"color\":\"rgb(114, 134, 81)\",\"background\":[252,253,248],\"ratio\":3.92,\"required\":4.5,\"snapshot\":\"Verified hold and proposed plan 1043\"},{\"tag\":\"P\",\"class_name\":\"\",\"text\":\"Verified 14 Oct, 04:40 · Reference hold-e9ac89d7c8eb\",\"color\":\"rgb(108, 130, 78)\",\"background\":[252,253,248],\"ratio\":4.16,\"required\":4.5,\"snapshot\":\"Verified hold and proposed plan 1043\"},{\"tag\":\"SPAN\",\"class_name\":\"attempt-state succeeded\",\"text\":\"Verified\",\"color\":\"rgb(96, 128, 52)\",\"background\":[252,253,248],\"ratio\":4.43,\"required\":4.5,\"snapshot\":\"Verified hold and proposed plan 1043\"},{\"tag\":\"SPAN\",\"class_name\":\"action-number \",\"text\":\"01\",\"color\":\"rgb(109, 132, 78)\",\"background\":[245,248,237],\"ratio\":3.86,\"required\":4.5,\"snapshot\":\"Verified hold and proposed plan 1043\"},{\"tag\":\"SPAN\",\"class_name\":\"action-number \",\"text\":\"02\",\"color\":\"rgb(109, 132, 78)\",\"background\":[245,248,237],\"ratio\":3.86,\"required\":4.5,\"snapshot\":\"Verified hold and proposed plan 1043\"},{\"tag\":\"SPAN\",\"class_name\":\"action-number \",\"text\":\"03\",\"color\":\"rgb(109, 132, 78)\",\"background\":[245,248,237],\"ratio\":3.86,\"required\":4.5,\"snapshot\":\"Verified hold and proposed plan 1043\"},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"Simulated provider\",\"color\":\"rgb(114, 134, 81)\",\"background\":[252,253,248],\"ratio\":3.92,\"required\":4.5,\"snapshot\":\"Verified hold and proposed plan 1044\"},{\"tag\":\"P\",\"class_name\":\"\",\"text\":\"Verified 14 Oct, 04:40 · Reference hold-453dddd347cf\",\"color\":\"rgb(108, 130, 78)\",\"background\":[252,253,248],\"ratio\":4.16,\"required\":4.5,\"snapshot\":\"Verified hold and proposed plan 1044\"},{\"tag\":\"SPAN\",\"class_name\":\"attempt-state succeeded\",\"text\":\"Verified\",\"color\":\"rgb(96, 128, 52)\",\"background\":[252,253,248],\"ratio\":4.43,\"required\":4.5,\"snapshot\":\"Verified hold and proposed plan 1044\"},{\"tag\":\"SPAN\",\"class_name\":\"action-number \",\"text\":\"01\",\"color\":\"rgb(109, 132, 78)\",\"background\":[245,248,237],\"ratio\":3.86,\"required\":4.5,\"snapshot\":\"Verified hold and proposed plan 1044\"},{\"tag\":\"SPAN\",\"class_name\":\"action-number \",\"text\":\"02\",\"color\":\"rgb(109, 132, 78)\",\"background\":[245,248,237],\"ratio\":3.86,\"required\":4.5,\"snapshot\":\"Verified hold and proposed plan 1044\"},{\"tag\":\"SPAN\",\"class_name\":\"action-number \",\"text\":\"03\",\"color\":\"rgb(109, 132, 78)\",\"background\":[245,248,237],\"ratio\":3.86,\"required\":4.5,\"snapshot\":\"Verified hold and proposed plan 1044\"},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"Simulated provider\",\"color\":\"rgb(114, 134, 81)\",\"background\":[252,253,248],\"ratio\":3.92,\"required\":4.5,\"snapshot\":\"Verified hold and proposed plan 1046\"},{\"tag\":\"P\",\"class_name\":\"\",\"text\":\"Verified 14 Oct, 04:40 · Reference hold-09fb5c8dedf7\",\"color\":\"rgb(108, 130, 78)\",\"background\":[252,253,248],\"ratio\":4.16,\"required\":4.5,\"snapshot\":\"Verified hold and proposed plan 1046\"},{\"tag\":\"SPAN\",\"class_name\":\"attempt-state succeeded\",\"text\":\"Verified\",\"color\":\"rgb(96, 128, 52)\",\"background\":[252,253,248],\"ratio\":4.43,\"required\":4.5,\"snapshot\":\"Verified hold and proposed plan 1046\"},{\"tag\":\"SPAN\",\"class_name\":\"action-number \",\"text\":\"01\",\"color\":\"rgb(109, 132, 78)\",\"background\":[245,248,237],\"ratio\":3.86,\"required\":4.5,\"snapshot\":\"Verified hold and proposed plan 1046\"},{\"tag\":\"SPAN\",\"class_name\":\"action-number \",\"text\":\"02\",\"color\":\"rgb(109, 132, 78)\",\"background\":[245,248,237],\"ratio\":3.86,\"required\":4.5,\"snapshot\":\"Verified hold and proposed plan 1046\"},{\"tag\":\"SPAN\",\"class_name\":\"action-number \",\"text\":\"03\",\"color\":\"rgb(109, 132, 78)\",\"background\":[245,248,237],\"ratio\":3.86,\"required\":4.5,\"snapshot\":\"Verified hold and proposed plan 1046\"},{\"tag\":\"SPAN\",\"class_name\":\"\",\"text\":\"1 of 2 confirmed\",\"color\":\"rgb(114, 134, 81)\",\"background\":[252,253,248],\"ratio\":3.92,\"required\":4.5,\"snapshot\":\"Incomplete refund recovery\"},{\"tag\":\"P\",\"class_name\":\"\",\"text\":\"Provider reference sim-5cf11786f69b4c\",\"color\":\"rgb(108, 130, 78)\",\"background\":[252,253,248],\"ratio\":4.16,\"required\":4.5,\"snapshot\":\"Incomplete refund recovery\"},{\"tag\":\"SPAN\",\"class_name\":\"attempt-state succeeded\",\"text\":\"Confirmed\",\"color\":\"rgb(96, 128, 52)\",\"background\":[252,253,248],\"ratio\":4.43,\"required\":4.5,\"snapshot\":\"Incomplete refund recovery\"},{\"tag\":\"P\",\"class_name\":\"\",\"text\":\"Provider rejected the request before writing. Safe reconciliation is a\",\"color\":\"rgb(108, 130, 78)\",\"background\":[252,253,248],\"ratio\":4.16,\"required\":4.5,\"snapshot\":\"Incomplete refund recovery\"},{\"tag\":\"SPAN\",\"class_name\":\"action-number \",\"text\":\"02\",\"color\":\"rgb(109, 132, 78)\",\"background\":[245,248,237],\"ratio\":3.86,\"required\":4.5,\"snapshot\":\"Incomplete refund recovery\"},{\"tag\":\"DIV\",\"class_name\":\"approved-note\",\"text\":\"This exact plan has an operator approval.\",\"color\":\"rgb(98, 131, 55)\",\"background\":[239,246,228],\"ratio\":3.94,\"required\":4.5,\"snapshot\":\"Incomplete refund recovery\"}]\n\n33 !== 0\n",
+  "mutation_routes": [
+    "/api/cases/case-9be6ad3893/approve",
+    "/api/cases/case-9be6ad3893/execute",
+    "/api/cases/case-3d823f25b8/fault",
+    "/api/cases/case-3d823f25b8/hold",
+    "/api/cases/case-3d823f25b8/retry",
+    "/api/cases/case-3d823f25b8/approve",
+    "/api/cases/case-3d823f25b8/execute",
+    "/api/cases/case-652397cafe/hold",
+    "/api/cases/case-652397cafe/approve",
+    "/api/cases/case-652397cafe/execute",
+    "/api/cases/case-525ecd5fc0/investigate",
+    "/api/cases/case-525ecd5fc0/approve",
+    "/api/cases/case-525ecd5fc0/execute",
+    "/api/cases/case-525ecd5fc0/retry",
+    "/api/cases/case-9c4ffdcf15/hold",
+    "/api/cases/case-9c4ffdcf15/approve",
+    "/api/cases/case-9c4ffdcf15/execute",
+    "/api/cases",
+    "/api/cases/case-c86ac0ac5d/clarify",
+    "/api/cases/case-c86ac0ac5d/fault",
+    "/api/cases/case-c86ac0ac5d/approve",
+    "/api/cases/case-c86ac0ac5d/execute",
+    "/api/cases/case-c86ac0ac5d/retry"
+  ]
+}
