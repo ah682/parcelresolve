@@ -56,9 +56,9 @@ npm test -- --browser-only
 
 The first command runs Python lint/format/type checks, TypeScript checking, the frontend build, automated tests and a 40-scenario evaluation at seeds 7, 19 and 41. Evaluation runs get fresh directories under ignored `evaluation/runs/`.
 
-The second command starts a disposable simulator and exercises real UI actions without changing the main demo data. It needs an installed Chrome, Chromium or Brave executable, or `CHROME_BIN`. Eight separately labelled presentation checks use controlled responses for loading, errors, focus and provenance. Screenshots and reports go to `frontend/qa/`.
+The second command starts a disposable simulator and exercises real UI actions without changing the main demo data. It needs an installed Chrome, Chromium or Brave executable, or `CHROME_BIN`. Eleven separately labelled presentation checks use controlled responses for loading, errors, focus, provenance and delayed responses. Screenshots and reports go to `frontend/qa/`.
 
-The [publication verification](docs/VERIFICATION.md) records **307 passing tests**, **336/336 offline recovery trials**, and **15 browser workflow/contrast checks plus eight presentation checks**. Process-kill tests cover 30 external-write windows and two planning transitions. CI runs the portable offline checks; these results do not establish real carrier or warehouse behavior.
+The [October maintenance audit](docs/QUALITY_AUDIT.md) records **313 passing tests**, **336/336 offline recovery trials**, and **15 browser workflow/contrast checks plus 11 presentation checks**. Process-kill tests cover 30 external-write windows and two planning transitions. [CI](https://github.com/ah682/parcelresolve/actions/workflows/verify.yml) runs the offline and browser checks. These results do not establish real carrier or warehouse behavior; the [original publication evidence](docs/VERIFICATION.md) remains dated separately.
 
 ## Integration and model modes
 
