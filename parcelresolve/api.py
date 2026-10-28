@@ -74,12 +74,13 @@ def create_app(directory: Path | None = None, *, seed: bool = True, recover: boo
     @app.middleware("http")
     async def browser_boundary(request: Request, call_next):
         origin = request.headers.get("origin")
-        if (
-            request.method not in {"GET", "HEAD", "OPTIONS"}
-            and origin
-            and urlparse(origin).netloc != request.headers.get("host")
-        ):
-            return JSONResponse({"detail": "Cross-origin writes are not allowed"}, status_code=403)
+        if request.method not in {"GET", "HEAD", "OPTIONS"} and origin:
+            try:
+                origin_host = urlparse(origin).netloc
+            except ValueError:
+                origin_host = None
+            if origin_host != request.headers.get("host"):
+                return JSONResponse({"detail": "Cross-origin writes are not allowed"}, status_code=403)
         response = await call_next(request)
         response.headers["X-Content-Type-Options"] = "nosniff"
         response.headers["Referrer-Policy"] = "no-referrer"

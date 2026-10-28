@@ -6,11 +6,15 @@ The desk gathers evidence, proposes exact actions, asks for approval and reads t
 
 **The default demo is a simulator with synthetic orders.** It works without credentials or model calls and drafts customer explanations without sending them. Real provider reads and review artifacts use a separate CLI; live recovery writes are unsupported.
 
+![ParcelResolve recovery queue with warehouse evidence and operator controls](frontend/qa/2026-10-28T070211764Z/desktop.png)
+
 ## Run locally
 
-You need **Python 3.12, Node 24, npm, uv and make**. Linux is tested; macOS is unverified and Windows is unsupported because the demo uses POSIX file locks.
+You need **Python 3.12, Node 24, npm, [uv](https://docs.astral.sh/uv/getting-started/installation/) and make**. Linux is tested; macOS is unverified and Windows is unsupported because the demo uses POSIX file locks.
 
 ```bash
+git clone https://github.com/ah682/parcelresolve.git
+cd parcelresolve
 npm run dev
 ```
 
@@ -54,7 +58,7 @@ The first command runs Python lint/format/type checks, TypeScript checking, the 
 
 The second command starts a disposable simulator and exercises real UI actions without changing the main demo data. It needs an installed Chrome, Chromium or Brave executable, or `CHROME_BIN`. Eight separately labelled presentation checks use controlled responses for loading, errors, focus and provenance. Screenshots and reports go to `frontend/qa/`.
 
-The [publication verification](docs/VERIFICATION.md) records **306 passing tests**, **336/336 offline recovery trials**, and **15 browser workflow/contrast checks plus eight presentation checks**. Process-kill tests cover 30 external-write windows and two planning transitions. CI runs the portable offline checks; these results do not establish real carrier or warehouse behavior.
+The [publication verification](docs/VERIFICATION.md) records **307 passing tests**, **336/336 offline recovery trials**, and **15 browser workflow/contrast checks plus eight presentation checks**. Process-kill tests cover 30 external-write windows and two planning transitions. CI runs the portable offline checks; these results do not establish real carrier or warehouse behavior.
 
 ## Integration and model modes
 

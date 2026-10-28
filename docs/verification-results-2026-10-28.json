@@ -9,8 +9,8 @@
     "make setup": "passed; fresh locked Python/npm install and build",
     "npm test": {
       "passed": true,
-      "python_tests": 306,
-      "seconds": 13.4,
+      "python_tests": 307,
+      "seconds": 13.13,
       "warnings": [
         "Starlette httpx test-client deprecation"
       ],
@@ -84,7 +84,7 @@
               "model_calls": 0,
               "model_input_tokens": 0,
               "model_output_tokens": 0,
-              "intake_seconds": 0.005304717691615224,
+              "intake_seconds": 0.0049444816540926695,
               "guarded_without_inference": 0,
               "external_effect_count": 306,
               "warehouse_effect_count": 93,
@@ -94,7 +94,7 @@
           }
         }
       },
-      "evaluation_seconds": 36.283474,
+      "evaluation_seconds": 35.653963,
       "evidence": "evaluation/results/verified-2026-10-28"
     },
     "npm test -- --browser-only": {
@@ -115,7 +115,7 @@
   },
   "source_sha256": {
     "parcelresolve/__init__.py": "af48bc9ebe75e14d3751e0b7e0fefbeaee273f3b9dcdafd323a04df1bbf40329",
-    "parcelresolve/api.py": "92412156307b861f0a63e20fde1f545c6a5505f45e22b24cd977c53a3b0636c3",
+    "parcelresolve/api.py": "937c55ac1184905639508a0a34a3de1d8971d2dcea772e4ee8baeac0491ca226",
     "parcelresolve/cli.py": "f81e6ed8d5be7962ae5ea7d2b79cb50d74f4f2b4868ed180abfc05e218e8fc92",
     "parcelresolve/domain.py": "9473bf06622f43cf46b7cb3220a079b4903fe7f5d54400cdc2e2f6c23c94144d",
     "parcelresolve/engine.py": "4df76790788c69ec44c9cd3c75a2f73c35bc7c8c5d7409a7e0cabd517cfc5063",
@@ -138,5 +138,19 @@
     "hosted CI",
     "production security/storage/load validation",
     "human handling-time/customer validation"
-  ]
+  ],
+  "review_fix": {
+    "test": "test_malformed_origin_is_rejected_without_creating_a_case",
+    "red": "HTTP 500 for Origin: http://[",
+    "green": "HTTP 403 with no case creation"
+  },
+  "dependency_audit": {
+    "tool": "pip-audit 2.10.1",
+    "python_known_vulnerabilities": 0,
+    "npm_known_vulnerabilities": 0,
+    "updated": {
+      "certifi": "2026.10.19",
+      "pytest": "9.0.3"
+    }
+  }
 }

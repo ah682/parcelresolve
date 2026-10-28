@@ -11,8 +11,8 @@ Environment: Linux, Python 3.12.3, Node 24.16.0, npm 11.13.0, uv 0.11.28; browse
 | Command | Observed outcome |
 |---|---|
 | `make setup` | Created a fresh virtual environment, installed all 26 locked Python packages and the npm lock, then built the frontend. Initial sandbox DNS failure was resolved by rerunning the same setup with network permission. |
-| `npm test` | Ruff lint/format, mypy (15 source files), TypeScript and build passed; **306 tests passed in 13.40 s**, with one upstream Starlette httpx test-client deprecation warning. |
-| Evaluation inside `npm test` | **336/336 trials passed** across 40 scenarios, two profiles and seeds 7/19/41, in 36.28 s. Both profiles recorded zero false resolutions, duplicate effects, end-state stale tracking and newly introduced invariant violations. |
+| `npm test` | Ruff lint/format, mypy (15 source files), TypeScript and build passed; **307 tests passed in 13.13 s**, with one upstream Starlette httpx test-client deprecation warning. |
+| Evaluation inside `npm test` | **336/336 trials passed** across 40 scenarios, two profiles and seeds 7/19/41, in 35.65 s. Both profiles recorded zero false resolutions, duplicate effects, end-state stale tracking and newly introduced invariant violations. |
 | `npm test -- --browser-only` | **15 workflow/layout/contrast checks and eight controlled presentation checks passed**, using a fresh disposable simulator. No unexpected page, console or network errors; no document overflow at 320, 390, 768, 1024 and 1440 pixels. |
 | `npm run dev` | Rechecked locked dependencies, built, seeded six cases and served the desk on loopback. Authenticated `/api/meta` returned HTTP 200 and simulator/deterministic labels. The owned server shut down cleanly. |
 | `make reset` | After shutdown, reset restored six cases. Automated tests also verify refusal while serving and preservation of unrelated files. |
@@ -45,3 +45,17 @@ Fresh browser reports and screenshots are indexed in [browser evidence](../front
 The CPU model was not rerun during publication. Its authentic frozen inference and failed workflow evidence remain unchanged: **51/108** classifications versus rules **57/108**, and **42 false resolutions** under scripted workflow approval. It remains rejected by the operator API. No model benefit or human handling-time saving is claimed.
 
 Authenticated merchant/carrier/gateway/warehouse behavior, supported live write guarantees, production storage/security, hosted model quality/cost and human/customer outcomes remain external gates. See [limitations](LIMITATIONS.md).
+
+## Final review and dependency audit
+
+Independent review found no major blocker. A malformed `Origin` header produced
+a server error before route handling; a regression reproduced HTTP 500, then
+verified HTTP 403 and no case creation after the fix. The complete suite and
+evaluation above were rerun on the final source.
+
+The publication audit updated certifi to 2026.10.19 and pytest to 9.0.3, resolving
+[the certifi advisory](https://github.com/advisories/GHSA-6q48-6c7w-9gw2) and
+[the pytest advisory](https://github.com/advisories/GHSA-6w46-j5rx-g56g).
+`uvx pip-audit --path .venv/lib/python3.12/site-packages` reported no known
+vulnerabilities; `npm audit` also reported zero. These are dated advisory checks,
+not a guarantee against undiscovered issues.

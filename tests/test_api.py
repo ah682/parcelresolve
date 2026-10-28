@@ -42,6 +42,17 @@ def test_non_ascii_bearer_token_is_rejected_without_a_server_error(client):
     assert not client.app.state.engine.sim.effects("1042")
 
 
+def test_malformed_origin_is_rejected_without_creating_a_case(tmp_path):
+    with TestClient(create_app(tmp_path, seed=False), raise_server_exceptions=False) as client:
+        response = client.post(
+            "/api/cases",
+            headers={**AUTH, "Origin": "http://["},
+            json={"order_id": "1042", "text": "Cancel it"},
+        )
+        assert response.status_code == 403
+        assert client.get("/api/cases", headers=AUTH).json()["cases"] == []
+
+
 def test_viewer_gets_read_only_capabilities_and_no_writes(client):
     assert client.get("/api/meta", headers=VIEWER).json()["operator"]["role"] == "viewer"
     assert client.get("/api/orders", headers=VIEWER).status_code == 200

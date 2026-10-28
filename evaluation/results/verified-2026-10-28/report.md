@@ -1,6 +1,6 @@
 # ParcelResolve offline synthetic evaluation
 
-Run: 2026-10-28T07:00:26.993115+00:00. Seeds: 7, 19, 41.
+Run: 2026-10-28T07:20:27.545803+00:00. Seeds: 7, 19, 41.
 
 Observed **336/336 passing trials** across **40 distinct scenarios**. Crash matrix expansions and seeded schedules are repeated trials, not additional independent scenarios.
 
